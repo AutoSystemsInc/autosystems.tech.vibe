@@ -152,9 +152,9 @@ export default function AboutPage() {
               {
                 year: "2015",
                 title: "会社設立",
-                description: "東京にてAutoSystems, Inc.を設立。創業メンバー5名でスタート。",
+                description: "東京にてAutoSystems株式会社を設立。",
               },
-              {
+              /*{
                 year: "2017",
                 title: "初の大型プロジェクト受注",
                 description: "大手製造業向けの工場自動化システムを開発・導入。",
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 year: "2024",
                 title: "新技術研究所設立",
                 description: "次世代技術の研究開発に特化した研究所を大阪に設立。",
-              },
+              },*/
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-6">
                 <div className="flex-shrink-0">

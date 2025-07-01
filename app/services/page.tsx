@@ -47,23 +47,23 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Target className="h-6 w-6 text-black" />
                   </div>
-                  <CardTitle className="text-2xl text-white">システム自動化コンサルティング</CardTitle>
+                  <CardTitle className="text-2xl text-white">技術コンサルティング</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  ヒアリング後にまずMVPでサービス検証いたします。
-                  月額制でリスクを抑えながら、継続的な改善で ROI を最大化します。
+                  技術顧問として、データ活用やDX推進をサポート。
+                  MVPで検証し、月額制で継続的に企業の技術戦略を支援します。
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="text-white font-semibold">主な特徴:</h4>
                   <ul className="space-y-2">
                     {[
-                      "詳細ヒアリングと課題分析",
-                      "実動するMVPでの効果確認",
-                      "月額制での低リスク導入",
-                      "追加料金なしの継続改善",
+                      "技術顧問としての戦略立案",
+                      "データ活用方針の策定",
+                      "MVPでの効果検証",
+                      "月額制での継続サポート",
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center text-slate-300">
                         <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
@@ -76,15 +76,17 @@ export default function ServicesPage() {
                 <div className="bg-slate-800/50 p-4 rounded-lg">
                   <h4 className="text-white font-semibold mb-2">期待される効果</h4>
                   <p className="text-slate-300 text-sm">
-                    製造業のお客様では、MVPで効果を確認後、月額制で導入。生産性40%向上、
-                    年間2億円のコスト削減を実現します。
+                    小売業のお客様では、データ分析基盤構築により売上予測精度が85%向上、
+                    在庫最適化で年間3,000万円のコスト削減を実現します。
                   </p>
                 </div>
 
-                <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold">
-                  詳細を見る
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/services/consulting">
+                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+                    詳細を見る
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -95,7 +97,7 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-white">カスタムソフトウェア開発</CardTitle>
+                  <CardTitle className="text-2xl text-white">ソフトウェア開発</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -128,13 +130,15 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
-                >
-                  詳細を見る
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/services/software">
+                  <Button
+                    variant="outline"
+                    className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
+                  >
+                    詳細を見る
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

@@ -292,34 +292,38 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-8">
                 <Target className="h-12 w-12 text-amber-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">システム自動化コンサルティング</h3>
+                <h3 className="text-2xl font-semibold text-white mb-4">技術コンサルティング</h3>
                 <p className="text-slate-300 mb-6">
-                  既存のビジネスプロセスを分析し、最適な自動化戦略を提案します。
-                  ROIを最大化する効率的なソリューションを設計・実装します。
+                  技術顧問として、データ活用やDX推進をサポート。
+                  MVPで検証し、月額制で継続的に企業の技術戦略を支援します。
                 </p>
-                <Button
-                  variant="outline"
-                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
-                >
-                  詳細を見る
-                </Button>
+                <Link href="/services/consulting">
+                  <Button
+                    variant="outline"
+                    className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
+                  >
+                    詳細を見る
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
             <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-8">
                 <Zap className="h-12 w-12 text-blue-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">カスタムソフトウェア開発</h3>
+                <h3 className="text-2xl font-semibold text-white mb-4">ソフトウェア開発</h3>
                 <p className="text-slate-300 mb-6">
                   お客様の特定のニーズに合わせたオーダーメイドのソフトウェアソリューションを開発します。
                   スケーラブルで保守性の高いシステムを構築します。
                 </p>
-                <Button
-                  variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
-                >
-                  詳細を見る
-                </Button>
+                <Link href="/services/software">
+                  <Button
+                    variant="outline"
+                    className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
+                  >
+                    詳細を見る
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -387,7 +391,7 @@ export default function HomePage() {
                 </div>
               </div>*/}
 
-              <div className="flex items-center space-x-4">
+              {/*<div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
@@ -407,7 +411,7 @@ export default function HomePage() {
                 <Button size="icon" variant="outline" className="border-slate-600 hover:bg-slate-700 bg-transparent">
                   <Linkedin className="h-5 w-5" />
                 </Button>
-              </div>
+              </div>*/}
             </div>
 
             {/*<Card className="bg-slate-700/50 border-slate-600">
