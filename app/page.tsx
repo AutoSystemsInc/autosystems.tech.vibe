@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin } from "lucide-react"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -77,13 +78,15 @@ export default function HomePage() {
                 お問い合わせ
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-slate-600 text-white hover:bg-slate-800 px-8 py-3 text-lg bg-transparent"
-              >
-                サービス詳細
-              </Button>
+              <Link href="/services">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-slate-600 text-white hover:bg-slate-800 px-8 py-3 text-lg bg-transparent"
+                >
+                  サービス詳細
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -103,6 +106,17 @@ export default function HomePage() {
               AutoSystems, Inc.は、システム自動化のパイオニアとして、
               世界中の企業や個人に革新的なソリューションを提供しています。
             </p>
+            <div className="mt-8">
+              <Link href="/about">
+                <Button
+                  variant="outline"
+                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
+                >
+                  詳細を見る
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -187,6 +201,17 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">SERVICES</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <div className="mt-8">
+              <Link href="/services">
+                <Button
+                  variant="outline"
+                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
+                >
+                  全サービスを見る
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -234,6 +259,17 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold text-white mb-4">CONTACT</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300">プロジェクトについてお気軽にご相談ください</p>
+            <div className="mt-8">
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
+                >
+                  詳細なお問い合わせ
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
