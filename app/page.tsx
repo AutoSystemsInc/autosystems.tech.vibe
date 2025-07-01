@@ -55,10 +55,6 @@ export default function HomePage() {
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
-            <Badge variant="outline" className="border-amber-400 text-amber-400 bg-amber-400/10">
-              Innovation in Automation
-            </Badge>
-
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               <span className="block">AutoSystemsの使命は</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
@@ -152,8 +148,8 @@ export default function HomePage() {
           <div className="bg-slate-700/30 rounded-2xl p-8 border border-slate-600">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-amber-400 mb-2">100%</div>
-                <p className="text-white font-semibold mb-1">デモ版提供</p>
+                <div className="text-3xl font-bold text-amber-400 mb-2">¥0</div>
+                <p className="text-white font-semibold mb-1">無料でお試し</p>
                 <p className="text-slate-300 text-sm">すべてのプロジェクトでデモ版を作成</p>
               </div>
               <div>
@@ -162,8 +158,8 @@ export default function HomePage() {
                 <p className="text-slate-300 text-sm">初期費用を抑えた導入が可能</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-400 mb-2">¥0</div>
-                <p className="text-white font-semibold mb-1">改善費用</p>
+                <div className="text-3xl font-bold text-green-400 mb-2">継続性</div>
+                <p className="text-white font-semibold mb-1">積極的アップデート</p>
                 <p className="text-slate-300 text-sm">継続的な機能改善に追加料金なし</p>
               </div>
             </div>
