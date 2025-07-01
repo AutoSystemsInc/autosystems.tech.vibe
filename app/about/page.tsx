@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Users, Target, Award, Globe, Calendar } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function AboutPage() {
   return (
@@ -45,19 +46,19 @@ export default function AboutPage() {
                 <div className="flex items-center">
                   <Calendar className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>設立年:</strong> 2015年
+                    <strong>設立年:</strong> 2023年
                   </span>
                 </div>
-                <div className="flex items-center">
+                {/*<div className="flex items-center">
                   <Users className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
                     <strong>従業員数:</strong> 150名
                   </span>
-                </div>
+                </div>*/}
                 <div className="flex items-center">
                   <Globe className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>拠点:</strong> 東京、大阪、シンガポール
+                    <strong>本社・所在地</strong> 東京都千代田区外神田2-10-6宮本ビル3-A
                   </span>
                 </div>
                 <div className="flex items-center">
@@ -73,8 +74,7 @@ export default function AboutPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-3">ミッション</h3>
                   <p className="text-slate-300">
-                    世界中のシステムを自動化し、すべての人がアクセスできる 使いやすいソリューションを提供することで、
-                    人々の生活と仕事をより豊かにする。
+                  AutoSystemsの使命は、世界中のシステムを自動化し、世界中の人がアクセスできて使えるようにすることです。
                   </p>
                 </CardContent>
               </Card>
@@ -207,21 +207,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "田中 太郎",
-                position: "代表取締役CEO",
-                description: "東京大学工学部卒業後、大手IT企業で10年間システム開発に従事。2015年にAutoSystemsを設立。",
-                image: "/placeholder.svg?height=300&width=300",
-              },
-              {
-                name: "佐藤 花子",
-                position: "取締役CTO",
-                description: "スタンフォード大学でAIを専攻。シリコンバレーでの経験を活かし、技術戦略を統括。",
-                image: "/placeholder.svg?height=300&width=300",
-              },
-              {
-                name: "鈴木 次郎",
-                position: "取締役CFO",
-                description: "公認会計士として大手監査法人で経験を積み、2018年にAutoSystemsに参画。",
+                name: "原 匠一郎",
+                position: "代表取締役",
+                description: "2023年にAutoSystemsを設立。",
                 image: "/placeholder.svg?height=300&width=300",
               },
             ].map((member, index) => (
@@ -240,16 +228,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-700 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-white mb-2">AutoSystems, Inc.</h3>
-            <p className="text-slate-400">© 2024 AutoSystems, Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

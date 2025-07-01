@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin, Cpu } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function HomePage() {
   return (
@@ -18,7 +19,7 @@ export default function HomePage() {
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              <span className="block">AutoSystemsの使命は</span>
+              <span className="block">AutoSystemsの使命は、</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
                 世界中のシステムを自動化し、
               </span>
@@ -36,13 +37,13 @@ export default function HomePage() {
                 お問い合わせ
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button></Link>
-              <Link href="/services">
+              <Link href="/about">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-slate-600 text-white hover:bg-slate-800 px-8 py-3 text-lg bg-transparent"
                 >
-                  サービス詳細
+                  私たちについて
                 </Button>
               </Link>
             </div>
@@ -445,16 +446,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-700 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-white mb-2">AutoSystems, Inc.</h3>
-            <p className="text-slate-400">© 2024 AutoSystems, Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

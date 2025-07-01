@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
+import Footer from "@/components/footer"
+import ContactForm from "@/components/contact-form"
 
 export default function ContactPage() {
   return (
@@ -40,117 +42,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="bg-slate-700/50 border-slate-600">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <MessageSquare className="h-6 w-6 text-amber-400 mr-3" />
-                  <h2 className="text-2xl font-bold text-white">お問い合わせフォーム</h2>
-                </div>
+            <ContactForm />
 
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white font-medium mb-2">お名前 *</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
-                        placeholder="山田太郎"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">会社名</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
-                        placeholder="株式会社サンプル"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white font-medium mb-2">メールアドレス *</label>
-                      <input
-                        type="email"
-                        className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
-                        placeholder="example@email.com"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">電話番号</label>
-                      <input
-                        type="tel"
-                        className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
-                        placeholder="03-1234-5678"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">お問い合わせ種別 *</label>
-                    <select
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
-                      required
-                    >
-                      <option value="">選択してください</option>
-                      <option value="consultation">サービスに関するご相談</option>
-                      <option value="quote">お見積もり依頼</option>
-                      <option value="support">技術サポート</option>
-                      <option value="partnership">パートナーシップ</option>
-                      <option value="other">その他</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">予算規模</label>
-                    <select className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors">
-                      <option value="">選択してください</option>
-                      <option value="under-1m">100万円未満</option>
-                      <option value="1m-5m">100万円〜500万円</option>
-                      <option value="5m-10m">500万円〜1,000万円</option>
-                      <option value="over-10m">1,000万円以上</option>
-                      <option value="undecided">未定</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">メッセージ *</label>
-                    <textarea
-                      rows={6}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors resize-none"
-                      placeholder="プロジェクトの詳細、ご要望、ご質問などをお聞かせください"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      id="privacy"
-                      className="mt-1 w-4 h-4 text-amber-400 bg-slate-800 border-slate-600 rounded focus:ring-amber-400"
-                      required
-                    />
-                    <label htmlFor="privacy" className="text-slate-300 text-sm">
-                      <a href="#" className="text-amber-400 hover:underline">
-                        プライバシーポリシー
-                      </a>
-                      に同意します *
-                    </label>
-                  </div>
-
-                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 text-lg">
-                    <Send className="mr-2 h-5 w-5" />
-                    送信する
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="bg-slate-700/50 border-slate-600">
+            {/*<Card className="bg-slate-700/50 border-slate-600">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-white mb-6">お問い合わせ先</h2>
 
@@ -201,7 +96,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card>*/}
 
               <Card className="bg-slate-700/50 border-slate-600">
                 <CardContent className="p-8">
@@ -241,11 +136,10 @@ export default function ContactPage() {
             {[
               {
                 name: "東京本社",
-                address: "〒150-0013\n東京都渋谷区恵比寿1-1-1\n恵比寿ガーデンプレイス 20F",
-                phone: "03-1234-5678",
-                access: "JR恵比寿駅 徒歩5分",
+                address: "〒101-0021\n東京都千代田区外神田2-10-6\n宮本ビル3-A",
+                access: "JR秋葉原駅 徒歩10分",
               },
-              {
+              /*{
                 name: "大阪支社",
                 address: "〒530-0001\n大阪府大阪市北区梅田2-2-2\n梅田スカイビル 15F",
                 phone: "06-1234-5678",
@@ -256,7 +150,7 @@ export default function ContactPage() {
                 address: "1 Raffles Place\n#20-61 One Raffles Place\nSingapore 048616",
                 phone: "+65-1234-5678",
                 access: "Raffles Place MRT Station",
-              },
+              },*/
             ].map((office, index) => (
               <Card key={index} className="bg-slate-700/50 border-slate-600">
                 <CardContent className="p-6">
@@ -264,9 +158,6 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     <div>
                       <p className="text-slate-300 whitespace-pre-line">{office.address}</p>
-                    </div>
-                    <div>
-                      <p className="text-slate-300">TEL: {office.phone}</p>
                     </div>
                     <div>
                       <p className="text-slate-400 text-sm">{office.access}</p>
@@ -279,15 +170,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-700 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-white mb-2">AutoSystems, Inc.</h3>
-            <p className="text-slate-400">© 2024 AutoSystems, Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
