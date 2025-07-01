@@ -3,50 +3,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin, Cpu } from "lucide-react"
 import Link from "next/link"
+import Header from "@/components/header"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-xl font-bold text-white">AutoSystems, Inc.</h1>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#about"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  ABOUT
-                </a>
-                <a
-                  href="#promises"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  PROMISES
-                </a>
-                <a
-                  href="#services"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  SERVICES
-                </a>
-                <a
-                  href="#contact"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  CONTACT
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -70,10 +32,10 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg">
+              <Link href="/contact"><Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg">
                 お問い合わせ
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              </Button></Link>
               <Link href="/services">
                 <Button
                   size="lg"
@@ -96,10 +58,10 @@ export default function HomePage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">デモファーストの開発プロセス</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">MVPファーストの開発プロセス</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              お客様のリスクを最小限に抑え、価値を最大化する独自の開発手法
+              最小限の機能で最大の価値を提供し、お客様のリスクを最小化する開発手法
             </p>
           </div>
 
@@ -118,9 +80,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">デモ版作成</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">MVP作成</h3>
               <p className="text-slate-300 text-sm">
-                実際に動作するデモ版を作成し、お客様に体験していただきます
+                実用最小限の機能を持つMVPを作成し、実際の価値を体験していただきます
               </p>
             </div>
             
@@ -130,7 +92,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">評価・導入</h3>
               <p className="text-slate-300 text-sm">
-                デモ版を評価いただき、ご納得いただけましたら月額制でご利用開始
+                MVPを評価いただき、ご納得いただけましたら月額制でご利用開始
               </p>
             </div>
             
@@ -150,7 +112,7 @@ export default function HomePage() {
               <div>
                 <div className="text-3xl font-bold text-amber-400 mb-2">¥0</div>
                 <p className="text-white font-semibold mb-1">無料でお試し</p>
-                <p className="text-slate-300 text-sm">すべてのプロジェクトでデモ版を作成</p>
+                <p className="text-slate-300 text-sm">すべてのプロジェクトでMVPを作成</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
@@ -174,7 +136,7 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold text-white mb-4">ABOUT</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              デモファーストのアプローチで、お客様のリスクを最小限に抑えながら、
+              MVPファーストのアプローチで、お客様のリスクを最小限に抑えながら、
               継続的な価値創造を実現する革新的な開発企業です。
             </p>
             <div className="mt-8">
@@ -196,9 +158,9 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Zap className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">デモファースト</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">MVPファースト</h3>
                 <p className="text-slate-300">
-                  ヒアリング後、まずデモ版を作成。お客様に実際に体験いただいてから本格導入を検討できます。
+                  ヒアリング後、まずMVPを作成。実用最小限の機能で価値を体験いただいてから本格導入を検討できます。
                 </p>
               </CardContent>
             </Card>
@@ -244,8 +206,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
-                title: "無料でデモ版を提供", 
-                description: "すべてのプロジェクトで実際に動作するデモ版を作成し、効果を実感いただきます",
+                title: "無料でMVPを提供", 
+                description: "すべてのプロジェクトで実用最小限の機能を持つMVPを作成し、価値を実感いただきます",
                 icon: "🎯",
                 color: "from-amber-400 to-orange-500"
               },
@@ -395,7 +357,7 @@ export default function HomePage() {
                   variant="outline"
                   className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
                 >
-                  詳細なお問い合わせ
+                  お問い合わせ
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -447,7 +409,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Card className="bg-slate-700/50 border-slate-600">
+            {/*<Card className="bg-slate-700/50 border-slate-600">
               <CardContent className="p-8">
                 <form className="space-y-6">
                   <div>
@@ -479,7 +441,7 @@ export default function HomePage() {
                   </Button>
                 </form>
               </CardContent>
-            </Card>
+            </Card>*/}
           </div>
         </div>
       </section>

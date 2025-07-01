@@ -3,47 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Cpu, Wifi, Database, Cloud, Shield, Zap, CheckCircle, ArrowRight, Monitor, Smartphone, Cog } from "lucide-react"
 import Link from "next/link"
+import Header from "@/components/header"
 
 export default function IoTDevicePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0">
-                <h1 className="text-xl font-bold text-white">AutoSystems, Inc.</h1>
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <Link
-                  href="/#about"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  ABOUT
-                </Link>
-                <Link
-                  href="/#promises"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  PROMISES
-                </Link>
-                <Link href="/services" className="text-amber-400 px-3 py-2 text-sm font-medium">
-                  SERVICES
-                </Link>
-                <Link
-                  href="/#contact"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header activeSection="services" />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16">
@@ -230,7 +195,7 @@ export default function IoTDevicePage() {
       <section className="py-16 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">活用事例</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">期待される活用シーン</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-indigo-400 to-violet-500 mx-auto"></div>
           </div>
 
@@ -239,14 +204,14 @@ export default function IoTDevicePage() {
               {
                 title: "スマートファクトリー",
                 description: "製造業向け生産ライン監視システム",
-                details: "センサーによる設備監視、予知保全、品質管理の自動化により、生産効率を35%向上させました。",
+                details: "センサーによる設備監視、予知保全、品質管理の自動化により、生産効率を35%向上させます。",
                 metrics: ["稼働率向上: +35%", "メンテナンス費用削減: -40%", "品質不良率: -60%"],
                 icon: Cog,
               },
               {
                 title: "スマートビルディング",
                 description: "オフィスビル向け統合管理システム",
-                details: "照明、空調、セキュリティを一元管理し、エネルギー消費を最適化。年間光熱費を30%削減しました。",
+                details: "照明、空調、セキュリティを一元管理し、エネルギー消費を最適化。年間光熱費を30%削減します。",
                 metrics: ["エネルギー削減: -30%", "運用コスト削減: -25%", "居住快適性向上: +20%"],
                 icon: Monitor,
               },
@@ -281,7 +246,7 @@ export default function IoTDevicePage() {
                   <p className="text-slate-300">{useCase.details}</p>
                   
                   <div className="space-y-2">
-                    <h4 className="text-white font-semibold text-sm">主な成果:</h4>
+                    <h4 className="text-white font-semibold text-sm">期待される成果:</h4>
                     <ul className="space-y-1">
                       {useCase.metrics.map((metric, metricIndex) => (
                         <li key={metricIndex} className="flex items-center text-slate-300 text-sm">

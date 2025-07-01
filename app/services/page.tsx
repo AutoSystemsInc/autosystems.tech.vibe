@@ -3,47 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Target, Zap, Cloud, Brain, Shield, Cog, CheckCircle, ArrowRight, Cpu } from "lucide-react"
 import Link from "next/link"
+import Header from "@/components/header"
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0">
-                <h1 className="text-xl font-bold text-white">AutoSystems, Inc.</h1>
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <Link
-                  href="/#about"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  ABOUT
-                </Link>
-                <Link
-                  href="/#promises"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  PROMISES
-                </Link>
-                <Link href="/#services" className="text-amber-400 px-3 py-2 text-sm font-medium">
-                  SERVICES
-                </Link>
-                <Link
-                  href="/#contact"
-                  className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header activeSection="services" />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16">
@@ -63,7 +28,7 @@ export default function ServicesPage() {
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">サービス一覧</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              デモファーストのアプローチで、リスクを最小限に抑えながら
+              MVPファーストのアプローチで、リスクを最小限に抑えながら
               お客様のビジネスを次のレベルへと導きます。
             </p>
           </div>
@@ -86,7 +51,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  ヒアリング後にまずデモ版で自動化効果を実感いただきます。
+                  ヒアリング後にまずMVPでサービス検証いたします。
                   月額制でリスクを抑えながら、継続的な改善で ROI を最大化します。
                 </p>
 
@@ -95,7 +60,7 @@ export default function ServicesPage() {
                   <ul className="space-y-2">
                     {[
                       "詳細ヒアリングと課題分析",
-                      "実動するデモ版での効果確認",
+                      "実動するMVPでの効果確認",
                       "月額制での低リスク導入",
                       "追加料金なしの継続改善",
                     ].map((feature, index) => (
@@ -108,10 +73,10 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <h4 className="text-white font-semibold mb-2">導入事例</h4>
+                  <h4 className="text-white font-semibold mb-2">期待される効果</h4>
                   <p className="text-slate-300 text-sm">
-                    製造業A社では、デモ版で効果を確認後、月額制で導入。生産性40%向上、
-                    年間2億円のコスト削減を実現しました。
+                    製造業のお客様では、MVPで効果を確認後、月額制で導入。生産性40%向上、
+                    年間2億円のコスト削減を実現します。
                   </p>
                 </div>
 
@@ -134,7 +99,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  デモ版で要件を具体化し、お客様に実際に操作いただいて仕様を確定。
+                  MVPで要件を具体化し、お客様に実際に操作いただいて仕様を確定。
                   月額制で運用開始後も継続的に機能を拡張していきます。
                 </p>
 
