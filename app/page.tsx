@@ -25,10 +25,10 @@ export default function HomePage() {
                   ABOUT
                 </a>
                 <a
-                  href="#skills"
+                  href="#promises"
                   className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
-                  SKILL
+                  PROMISES
                 </a>
                 <a
                   href="#services"
@@ -96,6 +96,81 @@ export default function HomePage() {
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
       </section>
 
+      {/* Development Process Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">デモファーストの開発プロセス</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              お客様のリスクを最小限に抑え、価値を最大化する独自の開発手法
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-black font-bold text-xl">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">ヒアリング</h3>
+              <p className="text-slate-300 text-sm">
+                お客様の課題やご要望を詳細にお伺いし、最適なソリューションを検討します
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">デモ版作成</h3>
+              <p className="text-slate-300 text-sm">
+                実際に動作するデモ版を作成し、お客様に体験していただきます
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">評価・導入</h3>
+              <p className="text-slate-300 text-sm">
+                デモ版を評価いただき、ご納得いただけましたら月額制でご利用開始
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">継続改善</h3>
+              <p className="text-slate-300 text-sm">
+                改善・改修を追加料金なしで継続的に実施し、価値を向上させます
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-slate-700/30 rounded-2xl p-8 border border-slate-600">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-amber-400 mb-2">100%</div>
+                <p className="text-white font-semibold mb-1">デモ版提供</p>
+                <p className="text-slate-300 text-sm">すべてのプロジェクトでデモ版を作成</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
+                <p className="text-white font-semibold mb-1">低リスク運用</p>
+                <p className="text-slate-300 text-sm">初期費用を抑えた導入が可能</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-400 mb-2">¥0</div>
+                <p className="text-white font-semibold mb-1">改善費用</p>
+                <p className="text-slate-300 text-sm">継続的な機能改善に追加料金なし</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,8 +178,8 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold text-white mb-4">ABOUT</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              AutoSystems, Inc.は、システム自動化のパイオニアとして、
-              世界中の企業や個人に革新的なソリューションを提供しています。
+              デモファーストのアプローチで、お客様のリスクを最小限に抑えながら、
+              継続的な価値創造を実現する革新的な開発企業です。
             </p>
             <div className="mt-8">
               <Link href="/about">
@@ -123,11 +198,11 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Globe className="h-8 w-8 text-black" />
+                  <Zap className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">グローバル展開</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">デモファースト</h3>
                 <p className="text-slate-300">
-                  世界中のクライアントに対応し、多様な文化や言語に配慮したソリューションを提供します。
+                  ヒアリング後、まずデモ版を作成。お客様に実際に体験いただいてから本格導入を検討できます。
                 </p>
               </CardContent>
             </Card>
@@ -135,11 +210,11 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="h-8 w-8 text-white" />
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">革新的技術</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">月額制運用</h3>
                 <p className="text-slate-300">
-                  AI、機械学習、クラウド技術を活用した最先端の自動化ソリューションを開発しています。
+                  高額な初期投資は不要。月額制により、お客様のリスクを最小限に抑えた導入が可能です。
                 </p>
               </CardContent>
             </Card>
@@ -147,11 +222,11 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="h-8 w-8 text-white" />
+                  <Globe className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">ユーザー中心</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">継続改善</h3>
                 <p className="text-slate-300">
-                  使いやすさとアクセシビリティを重視し、すべての人が利用できるシステムを構築します。
+                  導入後の改善・改修は追加料金なし。お客様と共に価値を継続的に向上させていきます。
                 </p>
               </CardContent>
             </Card>
@@ -159,35 +234,75 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
+      {/* Our Promises Section */}
+      <section id="promises" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">SKILLS</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">私たちの約束</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              お客様との信頼関係を大切にし、確実な価値提供をお約束します
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "AI & Machine Learning", level: 95 },
-              { name: "Cloud Architecture", level: 90 },
-              { name: "System Integration", level: 88 },
-              { name: "Process Automation", level: 92 },
-              { name: "Data Analytics", level: 85 },
-              { name: "DevOps", level: 87 },
-              { name: "Cybersecurity", level: 83 },
-              { name: "UI/UX Design", level: 80 },
-            ].map((skill, index) => (
-              <Card key={index} className="bg-slate-700/30 border-slate-600">
-                <CardContent className="p-6">
-                  <h3 className="text-white font-semibold mb-3">{skill.name}</h3>
-                  <div className="w-full bg-slate-600 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-amber-400 to-orange-500 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
+              { 
+                title: "無料でデモ版を提供", 
+                description: "すべてのプロジェクトで実際に動作するデモ版を作成し、効果を実感いただきます",
+                icon: "🎯",
+                color: "from-amber-400 to-orange-500"
+              },
+              { 
+                title: "月額制で低リスク", 
+                description: "高額な初期投資は不要。月額制により導入リスクを最小限に抑えます",
+                icon: "💰",
+                color: "from-blue-400 to-purple-500"
+              },
+              { 
+                title: "継続改善は無料", 
+                description: "導入後の機能追加・改修は追加料金なしで継続的に実施します",
+                icon: "🔄",
+                color: "from-green-400 to-teal-500"
+              },
+              { 
+                title: "透明性のある開発", 
+                description: "開発プロセスは常にオープンに。進捗や課題を共有し一緒に解決します",
+                icon: "👥",
+                color: "from-purple-400 to-pink-500"
+              },
+              { 
+                title: "24時間サポート", 
+                description: "運用開始後も安心。問題発生時は迅速に対応いたします",
+                icon: "🛠️",
+                color: "from-red-400 to-orange-500"
+              },
+              { 
+                title: "成果にコミット", 
+                description: "単なるシステム提供ではなく、お客様のビジネス成果向上を追求します",
+                icon: "📈",
+                color: "from-indigo-400 to-violet-500"
+              },
+              { 
+                title: "柔軟な対応力", 
+                description: "仕様変更や追加要望にも柔軟に対応。お客様と共に最適解を見つけます",
+                icon: "🤝",
+                color: "from-cyan-400 to-blue-500"
+              },
+              { 
+                title: "長期パートナー", 
+                description: "一時的な関係ではなく、長期的なビジネスパートナーとして成長を支援します",
+                icon: "🌟",
+                color: "from-yellow-400 to-amber-500"
+              },
+            ].map((promise, index) => (
+              <Card key={index} className="bg-slate-700/30 border-slate-600 hover:bg-slate-700/50 transition-all duration-300 group">
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${promise.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                    <span className="text-2xl">{promise.icon}</span>
                   </div>
-                  <span className="text-slate-300 text-sm mt-2 block">{skill.level}%</span>
+                  <h3 className="text-white font-semibold mb-3">{promise.title}</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">{promise.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -293,7 +408,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="flex items-center space-x-4">
+              {/*<div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
                   <Mail className="h-6 w-6 text-black" />
                 </div>
@@ -311,7 +426,7 @@ export default function HomePage() {
                   <h3 className="text-white font-semibold">Phone</h3>
                   <p className="text-slate-300">+81-3-1234-5678</p>
                 </div>
-              </div>
+              </div>*/}
 
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center">
@@ -319,7 +434,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">Address</h3>
-                  <p className="text-slate-300">東京都渋谷区恵比寿1-1-1</p>
+                  <p className="text-slate-300">東京都千代田区外神田2-10-6宮本ビル3-A</p>
                 </div>
               </div>
 

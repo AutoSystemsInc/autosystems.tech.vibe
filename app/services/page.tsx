@@ -25,10 +25,10 @@ export default function ServicesPage() {
                   ABOUT
                 </Link>
                 <Link
-                  href="/#skills"
+                  href="/#promises"
                   className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
-                  SKILL
+                  PROMISES
                 </Link>
                 <Link href="/#services" className="text-amber-400 px-3 py-2 text-sm font-medium">
                   SERVICES
@@ -63,7 +63,8 @@ export default function ServicesPage() {
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">サービス一覧</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              AutoSystemsが提供する包括的なソリューションで、 お客様のビジネスを次のレベルへと導きます。
+              デモファーストのアプローチで、リスクを最小限に抑えながら
+              お客様のビジネスを次のレベルへと導きます。
             </p>
           </div>
         </div>
@@ -85,18 +86,18 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  既存のビジネスプロセスを詳細に分析し、最適な自動化戦略を提案します。
-                  ROIを最大化する効率的なソリューションを設計・実装します。
+                  ヒアリング後にまずデモ版で自動化効果を実感いただきます。
+                  月額制でリスクを抑えながら、継続的な改善で ROI を最大化します。
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="text-white font-semibold">主な特徴:</h4>
                   <ul className="space-y-2">
                     {[
-                      "現状分析とプロセス最適化",
-                      "ROI計算と効果測定",
-                      "段階的導入計画の策定",
-                      "継続的な改善サポート",
+                      "詳細ヒアリングと課題分析",
+                      "実動するデモ版での効果確認",
+                      "月額制での低リスク導入",
+                      "追加料金なしの継続改善",
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center text-slate-300">
                         <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
@@ -109,7 +110,8 @@ export default function ServicesPage() {
                 <div className="bg-slate-800/50 p-4 rounded-lg">
                   <h4 className="text-white font-semibold mb-2">導入事例</h4>
                   <p className="text-slate-300 text-sm">
-                    製造業A社では、生産ライン自動化により生産性が40%向上し、 年間コスト削減額は2億円を達成しました。
+                    製造業A社では、デモ版で効果を確認後、月額制で導入。生産性40%向上、
+                    年間2億円のコスト削減を実現しました。
                   </p>
                 </div>
 
@@ -132,8 +134,8 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  お客様の特定のニーズに合わせたオーダーメイドのソフトウェアソリューションを開発します。
-                  スケーラブルで保守性の高いシステムを構築します。
+                  デモ版で要件を具体化し、お客様に実際に操作いただいて仕様を確定。
+                  月額制で運用開始後も継続的に機能を拡張していきます。
                 </p>
 
                 <div className="space-y-3">

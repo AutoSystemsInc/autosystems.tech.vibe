@@ -25,10 +25,10 @@ export default function IoTDevicePage() {
                   ABOUT
                 </Link>
                 <Link
-                  href="/#skills"
+                  href="/#promises"
                   className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
                 >
-                  SKILL
+                  PROMISES
                 </Link>
                 <Link href="/services" className="text-amber-400 px-3 py-2 text-sm font-medium">
                   SERVICES
