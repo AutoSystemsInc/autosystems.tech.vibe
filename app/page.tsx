@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin } from "lucide-react"
+import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin, Cpu } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
@@ -214,7 +214,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-8">
                 <Target className="h-12 w-12 text-amber-400 mb-6" />
@@ -246,6 +246,25 @@ export default function HomePage() {
                 >
                   詳細を見る
                 </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
+              <CardContent className="p-8">
+                <Cpu className="h-12 w-12 text-indigo-400 mb-6" />
+                <h3 className="text-2xl font-semibold text-white mb-4">IoTデバイス開発</h3>
+                <p className="text-slate-300 mb-6">
+                  センサーからクラウドまで、包括的なIoTソリューションを開発します。
+                  リアルタイムデータ収集と分析で新たな価値を創造します。
+                </p>
+                <Link href="/services/iot">
+                  <Button
+                    variant="outline"
+                    className="border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white bg-transparent"
+                  >
+                    詳細を見る
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

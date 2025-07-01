@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Target, Zap, Cloud, Brain, Shield, Cog, CheckCircle, ArrowRight } from "lucide-react"
+import { ArrowLeft, Target, Zap, Cloud, Brain, Shield, Cog, CheckCircle, ArrowRight, Cpu } from "lucide-react"
 import Link from "next/link"
 
 export default function ServicesPage() {
@@ -181,7 +181,7 @@ export default function ServicesPage() {
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               {
                 icon: Cloud,
@@ -207,21 +207,28 @@ export default function ServicesPage() {
                 description: "24/7の監視体制による安定したシステム運用",
                 color: "from-green-400 to-teal-500",
               },
+              {
+                icon: Cpu,
+                title: "IoTデバイス開発",
+                description: "センサーからクラウドまで、包括的なIoTソリューションの開発",
+                color: "from-indigo-400 to-violet-500",
+              },
             ].map((service, index) => (
-              <Card
-                key={index}
-                className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group"
-              >
-                <CardContent className="p-6 text-center">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
-                  >
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-300 text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
+              <Link href={service.title === "IoTデバイス開発" ? "/services/iot" : "#"} key={index}>
+                <Card
+                  className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group cursor-pointer"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
+                    >
+                      <service.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
+                    <p className="text-slate-300 text-sm">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -271,13 +278,6 @@ export default function ServicesPage() {
                 無料相談を申し込む
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-slate-600 text-white hover:bg-slate-700 bg-transparent px-8"
-            >
-              資料をダウンロード
-            </Button>
           </div>
         </div>
       </section>

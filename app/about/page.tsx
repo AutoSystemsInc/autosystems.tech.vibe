@@ -98,7 +98,7 @@ export default function AboutPage() {
                 <div className="flex items-center">
                   <Target className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>事業領域:</strong> システム自動化、AI開発、クラウドソリューション
+                    <strong>事業領域:</strong> システム自動化、AI開発、クラウドソリューション、IoTデバイス開発
                   </span>
                 </div>
               </div>
