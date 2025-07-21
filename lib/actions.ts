@@ -94,10 +94,10 @@ export async function submitContactForm(formData: FormData) {
     const customerMailOptions = {
       from: emailConfig.from || emailConfig.user,
       to: data.email,
-      subject: 'お問い合わせありがとうございます - AutoSystems, Inc.',
+      subject: 'お問い合わせありがとうございます - AutoSystems株式会社',
       html: `
         <h2>${data.name}様</h2>
-        <p>この度は、AutoSystems, Inc.にお問い合わせいただき、誠にありがとうございます。</p>
+        <p>この度は、AutoSystems株式会社にお問い合わせいただき、誠にありがとうございます。</p>
         <p>以下の内容でお問い合わせを受け付けいたしました。</p>
         
         <div style="background-color: #f5f5f5; padding: 20px; margin: 20px 0; border-left: 4px solid #f59e0b;">
@@ -109,14 +109,9 @@ export async function submitContactForm(formData: FormData) {
           <p>${data.message.replace(/\n/g, '<br>')}</p>
         </div>
         
-        <p>内容を確認の上、2営業日以内にご返信させていただきます。</p>
-        <p>お急ぎの場合は、お電話（03-1234-5678）でもお受けしております。</p>
-        
         <hr>
-        <p>AutoSystems, Inc.<br>
-        〒101-0021 東京都千代田区外神田2-10-6宮本ビル3-A<br>
-        TEL: 03-1234-5678<br>
-        Email: contact@autosystems.tech</p>
+        <p>AutoSystems株式会社<br>
+        〒101-0021 東京都千代田区外神田2-10-6宮本ビル3-A</p>
       `,
     }
 
