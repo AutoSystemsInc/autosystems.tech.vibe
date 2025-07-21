@@ -29,8 +29,8 @@ export default function AboutPage() {
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">私たちについて</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              AutoSystems, Inc.は2015年に設立され、システム自動化のパイオニアとして
-              世界中の企業や個人に革新的なソリューションを提供します。
+              AutoSystems株式会社は2023年に設立され、システム自動化のパイオニアとして
+              世界中の人々に革新的なソリューションを提供します。
             </p>
           </div>
         </div>
@@ -46,19 +46,25 @@ export default function AboutPage() {
                 <div className="flex items-center">
                   <Calendar className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>設立年:</strong> 2023年
+                    <strong>設立:</strong> 2023年4月12日
                   </span>
                 </div>
-                {/*<div className="flex items-center">
+                <div className="flex items-center">
                   <Users className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>従業員数:</strong> 150名
+                    <strong>代表取締役:</strong> 原匠一郎
                   </span>
-                </div>*/}
+                </div>
                 <div className="flex items-center">
                   <Globe className="h-5 w-5 text-amber-400 mr-3" />
                   <span>
-                    <strong>本社・所在地</strong> 東京都千代田区外神田2-10-6宮本ビル3-A
+                    <strong>所在地:</strong> 〒101-0021 東京都千代田区外神田2-10-6宮本ビル3-A
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <Target className="h-5 w-5 text-amber-400 mr-3" />
+                  <span>
+                    <strong>資本金:</strong> 1,500,000円
                   </span>
                 </div>
                 <div className="flex items-center">
@@ -150,7 +156,7 @@ export default function AboutPage() {
           <div className="space-y-8">
             {[
               {
-                year: "2015",
+                year: "2023",
                 title: "会社設立",
                 description: "東京にてAutoSystems株式会社を設立。",
               },
