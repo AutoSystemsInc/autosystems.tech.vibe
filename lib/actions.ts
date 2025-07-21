@@ -44,7 +44,7 @@ export async function submitContactForm(formData: FormData) {
       user: process.env.MAIL_USER,
       pass: process.env.MAIL_PASSWORD,
       from: process.env.MAIL_FROM || process.env.MAIL_USER,
-      to: process.env.MAIL_TO || 'contact@autosystems.tech'
+      to: process.env.MAIL_TO
     }
 
     // 必要な環境変数が設定されていない場合は開発モードとして処理

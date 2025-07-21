@@ -142,7 +142,7 @@ export default function ContactForm() {
             ></textarea>
           </div>
 
-          <div className="flex items-start space-x-3">
+          {/*<div className="flex items-start space-x-3">
             <input
               type="checkbox"
               id="privacy"
@@ -155,7 +155,7 @@ export default function ContactForm() {
               </a>
               に同意します *
             </label>
-          </div>
+          </div>*/}
 
           <Button 
             type="submit"
