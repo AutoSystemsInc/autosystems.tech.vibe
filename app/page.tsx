@@ -291,11 +291,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-8">
-                <Target className="h-12 w-12 text-amber-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">技術コンサルティング</h3>
+                <Cpu className="h-12 w-12 text-amber-400 mb-6" />
+                <h3 className="text-2xl font-semibold text-white mb-4">リモートOBD2トラッカー</h3>
                 <p className="text-slate-300 mb-6">
-                  技術顧問として、データ活用やDX推進をサポート。
-                  MVPで検証し、月額制で継続的に企業の技術戦略を支援します。
+                  車両のOBD2ポートに接続し、車の状態や運転データをリモートで取得・監視。
+                  フリート管理や予防整備、安全運転支援を実現します。
                 </p>
                 <Link href="/services/consulting">
                   <Button

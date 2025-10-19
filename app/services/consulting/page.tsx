@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Target, BarChart3, Users, CheckCircle, ArrowRight, Brain, Lightbulb, TrendingUp, Database, Zap, Shield } from "lucide-react"
+import { ArrowLeft, Car, Wifi, MapPin, CheckCircle, ArrowRight, AlertTriangle, BarChart3, Shield, Smartphone, Cloud, Truck } from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-export default function ConsultingPage() {
+export default function OBD2TrackerPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Header activeSection="services" />
@@ -25,12 +25,12 @@ export default function ConsultingPage() {
 
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-amber-400 text-amber-400 bg-amber-400/10 mb-6">
-              Technical Consulting
+              Remote OBD2 Tracker
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">技術コンサルティング</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">リモートOBD2トラッカー</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              技術顧問として、データ活用・DX推進をサポート。
-              企業の技術戦略を継続的に支援し、競争優位性を創出します。
+              車両のOBD2ポートに接続し、車の状態や運転データをリモートで取得・監視。
+              フリート管理や車両の予防整備、安全運転支援を実現します。
             </p>
           </div>
         </div>
@@ -41,20 +41,20 @@ export default function ConsultingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">技術顧問としてのサポート</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">リモートOBD2トラッカーとは</h2>
               <p className="text-slate-300 mb-6">
-                技術顧問として、企業のデータ活用やDX推進を支援します。
-                単なる技術提案ではなく、ビジネス戦略と技術戦略を統合し、
-                継続的な価値創造を実現するパートナーシップを提供します。
+                車両のOBD2ポートに接続することで、車の状態や運転データをリモートで取得・監視できるデバイスです。
+                4G/LTE通信機能を搭載し、リアルタイムでデータをクラウドに送信。
+                車両管理の効率化と安全性向上を実現します。
               </p>
               <div className="space-y-4">
                 {[
-                  "技術戦略の立案・実行",
-                  "データ活用方針の策定",
-                  "MVPを通じた効果検証", 
-                  "月額制での継続的サポート",
-                  "組織の技術力向上支援",
-                  "最新技術トレンドの提供",
+                  "車両センサー情報のリアルタイム取得",
+                  "4G/LTE通信によるクラウド連携",
+                  "故障コード（DTC）の即座な通知",
+                  "GPS連動による位置情報追跡",
+                  "運転履歴の詳細記録",
+                  "予防整備のタイミング通知",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-amber-400 mr-3" />
@@ -64,24 +64,25 @@ export default function ConsultingPage() {
               </div>
             </div>
             <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600">
-              <Target className="h-16 w-16 text-amber-400 mx-auto mb-6" />
+              <Car className="h-16 w-16 text-amber-400 mx-auto mb-6" />
               <h3 className="text-xl font-semibold text-white text-center mb-4">
-                MVPファーストアプローチ
+                包括的な車両管理ソリューション
               </h3>
               <p className="text-slate-300 text-center">
-                大きな投資の前に、まずMVPで効果を検証。
-                リスクを最小化しながら、確実な価値創造を目指します。
+                単なるトラッキングデバイスではなく、
+                車両の健康状態から運転行動まで、
+                総合的な車両管理を実現します。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Main Features */}
       <section className="py-16 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">サポート領域</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">主な機能</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto"></div>
           </div>
 
@@ -89,45 +90,45 @@ export default function ConsultingPage() {
             {[
               {
                 icon: BarChart3,
-                title: "データ活用戦略",
-                description: "データを競争優位につなげる戦略立案と実行支援",
-                details: ["データ戦略策定", "分析基盤構築", "BI・レポート設計"],
+                title: "リアルタイムデータ取得",
+                description: "車両の各種センサー情報をリアルタイムで監視",
+                details: ["エンジン回転数", "車速", "冷却水温度", "燃料消費量"],
                 color: "from-blue-400 to-cyan-500",
               },
               {
-                icon: Brain,
-                title: "AI・機械学習導入",
-                description: "業務に最適化されたAI・機械学習ソリューション",
-                details: ["予測モデル構築", "自動化システム", "推奨エンジン"],
+                icon: Wifi,
+                title: "4G/LTE通信",
+                description: "取得したデータをクラウド上に即座に送信",
+                details: ["リアルタイム送信", "安定した通信", "データ暗号化"],
                 color: "from-purple-400 to-pink-500",
               },
               {
-                icon: TrendingUp,
-                title: "DX推進支援",
-                description: "デジタル変革を成功に導く包括的サポート",
-                details: ["DX戦略立案", "システム現代化", "プロセス改革"],
+                icon: AlertTriangle,
+                title: "故障診断・通知",
+                description: "DTCコードを検知し即座に管理者へ通知",
+                details: ["故障コード検出", "スマホ通知", "管理画面表示"],
+                color: "from-red-400 to-orange-500",
+              },
+              {
+                icon: MapPin,
+                title: "GPS位置追跡",
+                description: "車両の位置情報と運転履歴を記録・管理",
+                details: ["リアルタイム追跡", "ルート履歴", "ジオフェンス"],
                 color: "from-green-400 to-teal-500",
               },
               {
-                icon: Database,
-                title: "データ基盤構築",
-                description: "スケーラブルで効率的なデータ基盤の設計・構築",
-                details: ["データパイプライン", "クラウド移行", "セキュリティ対策"],
+                icon: Shield,
+                title: "盗難防止機能",
+                description: "不正な車両移動を検知し即座にアラート",
+                details: ["移動検知", "緊急通知", "遠隔エンジン停止"],
                 color: "from-indigo-400 to-violet-500",
               },
               {
-                icon: Lightbulb,
-                title: "技術戦略コンサル",
-                description: "中長期的な技術ロードマップの策定と実行",
-                details: ["技術選定支援", "アーキテクチャ設計", "開発体制構築"],
+                icon: Smartphone,
+                title: "モバイルアプリ",
+                description: "スマートフォンから車両状態を確認・管理",
+                details: ["リアルタイム監視", "通知受信", "レポート閲覧"],
                 color: "from-amber-400 to-yellow-500",
-              },
-              {
-                icon: Users,
-                title: "組織・人材開発",
-                description: "技術組織の成長と人材育成をサポート",
-                details: ["技術研修", "採用支援", "組織設計"],
-                color: "from-red-400 to-orange-500",
               },
             ].map((service, index) => (
               <Card key={index} className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
@@ -152,14 +153,14 @@ export default function ConsultingPage() {
         </div>
       </section>
 
-      {/* Service Process */}
+      {/* Implementation Process */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">サービスプロセス</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">導入プロセス</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              体系的なアプローチで、確実に成果につながるサポートを提供します。
+              簡単な導入プロセスで、迅速に車両管理システムを開始できます。
             </p>
           </div>
 
@@ -167,27 +168,27 @@ export default function ConsultingPage() {
             {[
               {
                 step: "01",
-                title: "現状分析",
-                description: "技術・データ活用の現状を詳細に分析",
-                details: ["技術資産棚卸", "課題特定", "ゴール設定"]
+                title: "要件ヒアリング",
+                description: "車両管理のニーズと要件を詳細にお伺い",
+                details: ["管理台数確認", "必要機能選定", "運用体制検討"]
               },
               {
                 step: "02", 
-                title: "戦略策定",
-                description: "ビジネス目標に最適化された技術戦略を策定",
-                details: ["ロードマップ作成", "優先順位決定", "ROI算定"]
+                title: "デバイス設置",
+                description: "OBD2ポートにトラッカーを接続・設定",
+                details: ["デバイス取付", "通信設定", "動作確認"]
               },
               {
                 step: "03",
-                title: "MVP開発",
-                description: "最小限の投資で効果を検証するMVPを開発",
-                details: ["プロトタイプ作成", "効果測定", "改善案検討"]
+                title: "システム構築",
+                description: "管理画面とモバイルアプリの環境構築",
+                details: ["アカウント作成", "ダッシュボード設定", "通知設定"]
               },
               {
                 step: "04",
-                title: "継続改善",
-                description: "月額制で継続的にサポート・改善を実施",
-                details: ["定期レビュー", "機能拡張", "最適化"]
+                title: "運用開始",
+                description: "本格運用開始と継続的なサポート提供",
+                details: ["運用トレーニング", "定期メンテナンス", "機能追加"]
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -211,43 +212,43 @@ export default function ConsultingPage() {
       <section className="py-16 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">活用シーン・期待される成果</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">利用シーン・導入効果</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "小売業でのデータ活用",
-                company: "中堅小売チェーン",
-                challenge: "売上予測精度の向上と在庫最適化",
-                solution: "データ分析基盤構築とAI予測モデル導入",
-                results: ["売上予測精度: 65% → 85%", "在庫コスト削減: 年間3,000万円", "欠品率: 15% → 3%"],
-                icon: TrendingUp,
+                title: "フリート管理",
+                company: "物流会社",
+                challenge: "多数の配送車両の効率的な管理と運行状況の把握",
+                solution: "全車両にOBD2トラッカーを設置し、一元管理システムを構築",
+                results: ["運行効率: 25%向上", "燃料コスト: 15%削減", "車両故障: 60%減少"],
+                icon: Truck,
               },
               {
-                title: "製造業でのDX推進",
-                company: "部品製造業",
-                challenge: "生産効率向上と品質管理の自動化",
-                solution: "IoT導入と品質管理システム構築",
-                results: ["生産効率: 20%向上", "品質不良率: 50%削減", "人的ミス: 80%削減"],
-                icon: BarChart3,
+                title: "レンタカー管理",
+                company: "レンタカー事業者",
+                challenge: "車両の位置把握と盗難防止、メンテナンス管理",
+                solution: "GPS追跡機能付きOBD2トラッカーで車両状態を監視",
+                results: ["盗難事件: 0件達成", "メンテナンス効率: 40%向上", "顧客満足度: 30%向上"],
+                icon: Car,
               },
               {
-                title: "金融業でのAI活用",
-                company: "地方銀行",
-                challenge: "リスク評価の精度向上と業務効率化",
-                solution: "機械学習による信用評価モデル構築",
-                results: ["審査時間: 50%短縮", "貸倒率: 30%改善", "顧客満足度: 25%向上"],
-                icon: Brain,
+                title: "企業車両管理",
+                company: "建設会社",
+                challenge: "現場車両の安全運転管理と予防整備の実施",
+                solution: "運転行動分析とメンテナンス通知システムを導入",
+                results: ["事故件数: 70%削減", "整備コスト: 20%削減", "車両稼働率: 35%向上"],
+                icon: Shield,
               },
               {
-                title: "サービス業での業務自動化",
-                company: "人材サービス会社",
-                challenge: "マッチング精度向上と業務効率化",
-                solution: "AI推奨システムと業務自動化ツール導入",
-                results: ["マッチング成功率: 40%向上", "業務時間: 60%削減", "売上: 35%増加"],
-                icon: Users,
+                title: "個人車両管理",
+                company: "一般ユーザー",
+                challenge: "愛車の健康状態把握と盗難対策の強化",
+                solution: "スマートフォンアプリと連動した個人向けトラッカー",
+                results: ["故障予防: 早期発見率90%", "盗難防止: 即座通知", "燃費改善: 平均12%向上"],
+                icon: Smartphone,
               },
             ].map((useCase, index) => (
               <Card key={index} className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300 group">
@@ -302,20 +303,25 @@ export default function ConsultingPage() {
           <div className="bg-slate-700/30 rounded-2xl p-8 border border-slate-600 max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-amber-400 mb-2">¥0</div>
-                <p className="text-white font-semibold mb-1">初回相談・MVP開発</p>
-                <p className="text-slate-300 text-sm">現状分析とMVP開発は無料で実施</p>
+                <div className="text-3xl font-bold text-amber-400 mb-2">初期費用</div>
+                <p className="text-white font-semibold mb-1">デバイス・設置</p>
+                <p className="text-slate-300 text-sm">デバイス代金と設置作業費用</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
-                <p className="text-white font-semibold mb-1">継続サポート</p>
-                <p className="text-slate-300 text-sm">企業規模・内容に応じて柔軟に設定</p>
+                <p className="text-white font-semibold mb-1">通信・管理費用</p>
+                <p className="text-slate-300 text-sm">車両台数に応じた月額料金</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-400 mb-2">成果保証</div>
-                <p className="text-white font-semibold mb-1">効果が出るまでサポート</p>
-                <p className="text-slate-300 text-sm">目標達成まで追加料金なし</p>
+                <div className="text-3xl font-bold text-green-400 mb-2">サポート</div>
+                <p className="text-white font-semibold mb-1">24時間監視・保守</p>
+                <p className="text-slate-300 text-sm">システム監視と技術サポート込み</p>
               </div>
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-slate-300 text-sm">
+                ※ 詳細な料金については、管理台数や必要機能に応じてお見積もりいたします
+              </p>
             </div>
           </div>
         </div>
@@ -324,15 +330,15 @@ export default function ConsultingPage() {
       {/* CTA Section */}
       <section className="py-16 bg-slate-800/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">技術顧問サービスを始めませんか？</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">リモートOBD2トラッカーを導入しませんか？</h2>
           <p className="text-xl text-slate-300 mb-8">
-            データ活用やDX推進でお困りの企業様、まずは無料相談からお気軽にお問い合わせください。
-            現状分析とMVP開発を通じて、具体的な価値創造をご提案いたします。
+            車両管理の効率化や安全性向上をお考えの企業様、まずはお気軽にご相談ください。
+            お客様のニーズに合わせた最適なソリューションをご提案いたします。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
               <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8">
-                無料相談を申し込む
+                お問い合わせ・お見積もり
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

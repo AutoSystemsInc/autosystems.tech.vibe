@@ -45,25 +45,25 @@ export default function ServicesPage() {
               <CardHeader>
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Target className="h-6 w-6 text-black" />
+                    <Cpu className="h-6 w-6 text-black" />
                   </div>
-                  <CardTitle className="text-2xl text-white">技術コンサルティング</CardTitle>
+                  <CardTitle className="text-2xl text-white">リモートOBD2トラッカー</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  技術顧問として、データ活用やDX推進をサポート。
-                  MVPで検証し、月額制で継続的に企業の技術戦略を支援します。
+                  車両のOBD2ポートに接続し、車の状態や運転データをリモートで取得・監視。
+                  フリート管理や予防整備、安全運転支援を実現します。
                 </p>
 
                 <div className="space-y-3">
-                  <h4 className="text-white font-semibold">主な特徴:</h4>
+                  <h4 className="text-white font-semibold">主な機能:</h4>
                   <ul className="space-y-2">
                     {[
-                      "技術顧問としての戦略立案",
-                      "データ活用方針の策定",
-                      "MVPでの効果検証",
-                      "月額制での継続サポート",
+                      "リアルタイムデータ取得",
+                      "4G/LTE通信によるクラウド連携",
+                      "故障コード（DTC）の即座通知",
+                      "GPS連動による位置情報追跡",
                     ].map((feature, index) => (
                       <li key={index} className="flex items-center text-slate-300">
                         <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
@@ -74,10 +74,10 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <h4 className="text-white font-semibold mb-2">期待される効果</h4>
+                  <h4 className="text-white font-semibold mb-2">導入効果</h4>
                   <p className="text-slate-300 text-sm">
-                    小売業のお客様では、データ分析基盤構築により売上予測精度が85%向上、
-                    在庫最適化で年間3,000万円のコスト削減を実現します。
+                    物流会社では運行効率25%向上、燃料コスト15%削減、
+                    車両故障60%減少を実現。総合的な車両管理を支援します。
                   </p>
                 </div>
 
