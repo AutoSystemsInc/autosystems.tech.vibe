@@ -51,8 +51,10 @@ export default function HomePage() {
         </div>
 
         {/* Floating Elements */}
+        {/*
         <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
+        */}
       </section>
 
       {/* Development Process Section */}
@@ -297,7 +299,7 @@ export default function HomePage() {
                   車両のOBD2ポートに接続し、車の状態や運転データをリモートで取得・監視。
                   フリート管理や予防整備、安全運転支援を実現します。
                 </p>
-                <Link href="/services/consulting">
+                <Link href="/services/obd2">
                   <Button
                     variant="outline"
                     className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"

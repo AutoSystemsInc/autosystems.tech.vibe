@@ -81,7 +81,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <Link href="/services/consulting">
+                <Link href="/services/obd2">
                   <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold">
                     詳細を見る
                     <ArrowRight className="ml-2 h-4 w-4" />
