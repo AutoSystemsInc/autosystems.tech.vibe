@@ -1,35 +1,41 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send, MessageSquare, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import { submitContactForm } from '@/lib/actions'
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isPending, startTransition] = useTransition()
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
-  async function handleSubmit(formData: FormData) {
-    setIsSubmitting(true)
+  function handleSubmit(formData: FormData) {
     setMessage(null)
-
-    try {
-      const result = await submitContactForm(formData)
-      
-      if (result.success) {
-        setMessage({ type: 'success', text: result.message || 'お問い合わせを送信しました' })
-        // フォームをリセット
-        const form = document.getElementById('contact-form') as HTMLFormElement
-        form?.reset()
-      } else {
-        setMessage({ type: 'error', text: result.error || 'エラーが発生しました' })
+    
+    startTransition(async () => {
+      try {
+        const result = await submitContactForm(formData)
+        
+        if (result.success) {
+          setMessage({ type: 'success', text: result.message || 'お問い合わせを送信しました' })
+          setIsSubmitted(true)
+          // フォームをリセット
+          const form = document.getElementById('contact-form') as HTMLFormElement
+          form?.reset()
+          
+          // 3秒後にボタンを元の状態に戻す
+          setTimeout(() => {
+            setIsSubmitted(false)
+          }, 3000)
+        } else {
+          setMessage({ type: 'error', text: result.error || 'エラーが発生しました' })
+        }
+      } catch (error) {
+        setMessage({ type: 'error', text: 'エラーが発生しました。もう一度お試しください。' })
       }
-    } catch (error) {
-      setMessage({ type: 'error', text: 'エラーが発生しました。もう一度お試しください。' })
-    } finally {
-      setIsSubmitting(false)
-    }
+    })
   }
 
   return (
@@ -159,13 +165,22 @@ export default function ContactForm() {
 
           <Button 
             type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isPending || isSubmitted}
+            className={`w-full font-semibold py-3 text-lg disabled:cursor-not-allowed transition-all duration-300 ${
+              isSubmitted 
+                ? 'bg-green-500 hover:bg-green-600 text-white' 
+                : 'bg-amber-500 hover:bg-amber-600 text-black disabled:opacity-50'
+            }`}
           >
-            {isSubmitting ? (
+            {isPending ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 送信中...
+              </>
+            ) : isSubmitted ? (
+              <>
+                <CheckCircle className="mr-2 h-5 w-5" />
+                送信されました
               </>
             ) : (
               <>
