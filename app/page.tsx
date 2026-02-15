@@ -1,457 +1,623 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Globe, Zap, Users, Target, Mail, Phone, MapPin, Github, Twitter, Linkedin, Cpu } from "lucide-react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import {
+  ArrowRight,
+  Globe,
+  Zap,
+  FileSpreadsheet,
+  Copy,
+  UserCog,
+  Cpu,
+  CheckCircle2,
+  MessageCircle,
+  Play,
+} from "lucide-react"
 import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import FixedCTA from "@/components/fixed-cta"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Header />
+      <FixedCTA />
 
-      {/* Hero Section */}
+      {/* 1st View: 具体キャッチ＋CTA */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/90 z-10"></div>
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"></div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              <span className="block">AutoSystemsの使命は、</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                世界中のシステムを自動化し、
-              </span>
-              <span className="block">世界中の人がアクセスできて</span>
-              <span className="block">使えるようにすることです。</span>
+            <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50 px-4 py-1">
+              MVPファースト開発
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <span>可能性を、</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">形に。</span>
             </h1>
 
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              私たちは最先端の技術を駆使して、複雑なシステムをシンプルで使いやすいソリューションに変革します。
-              グローバルなアクセシビリティと革新的な自動化で、未来を創造します。
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              車両管理・業務効率化・IoTデータ収集など、まず無料でMVPを作成。
+              価値を実感してから月額制で本格導入。初期費用ゼロ、リスクゼロで始められます。
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact"><Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg">
-                お問い合わせ
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button></Link>
-              <Link href="/about">
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  無料相談・デモ依頼
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/services">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-slate-600 text-white hover:bg-slate-800 px-8 py-3 text-lg bg-transparent"
                 >
-                  私たちについて
+                  <Play className="mr-2 h-5 w-5" />
+                  サービス一覧
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-
-        {/* Floating Elements */}
-        {/*
-        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
-        */}
       </section>
 
-      {/* Development Process Section */}
-      <section className="py-20">
+      {/* 課題提示：よくある悩み */}
+      <section id="problems" className="py-20 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">MVPファーストの開発プロセス</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              こんな悩み、ありませんか？
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              最小限の機能で最大の価値を提供し、お客様のリスクを最小化する開発手法
+              Excel管理・二重入力・属人化など、多くの企業が抱える業務効率化の課題。
+              私たちはその解決を専門としています。
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-slate-700/50 border-slate-600 hover:border-amber-500/50 transition-colors">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
+                  <UserCog className="h-7 w-7 text-red-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  属人化で業務が止まる
+                </h3>
+                <p className="text-slate-300">
+                  特定の人にしか分からないExcelや手順。担当者がいないと業務が回らない。引き継ぎも大変で、リスクが高い。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600 hover:border-amber-500/50 transition-colors">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-orange-500/20 rounded-full flex items-center justify-center mb-6">
+                  <FileSpreadsheet className="h-7 w-7 text-orange-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Excelの限界を感じている
+                </h3>
+                <p className="text-slate-300">
+                  データ量が増えると重くなる、複数人での共有が難しい、ミスが起きやすい。Excelではもう限界だと感じている。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600 hover:border-amber-500/50 transition-colors">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-yellow-500/20 rounded-full flex items-center justify-center mb-6">
+                  <Copy className="h-7 w-7 text-yellow-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  二重入力・手作業が発生
+                </h3>
+                <p className="text-slate-300">
+                  複数のシステムに同じデータを入力、紙とデジタルの両方で管理。人的ミスや工数増加に悩んでいる。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+                課題解決の相談は無料です
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 解決：提供価値 */}
+      <section id="solution" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              AutoSystemsが提供する価値
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              課題を「何をどう変えるか」で具体的に解決します
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-8 w-8 text-black" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  属人化 → システム化
+                </h3>
+                <p className="text-slate-300">
+                  手順やノウハウをシステムに組み込み。誰でも同じ品質で業務を実行できる体制に変えます。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Globe className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  Excel → 専用システム
+                </h3>
+                <p className="text-slate-300">
+                  データ量に強い、共有しやすい、ミスを防ぐ。業務に特化したシステムでExcelの限界を超えます。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  二重入力 → 一元管理・自動連携
+                </h3>
+                <p className="text-slate-300">
+                  API連携や自動取り込みで、一度入力すれば複数システムに反映。手作業を削減しミスをゼロに近づけます。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
+              >
+                具体的な解決策を相談する
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 証拠（Proof） */}
+      <section id="proof" className="py-20 bg-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              実績・体制・開発手法
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              お客様のリスクを最小化する開発体制と実績
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-slate-700/30 border-slate-600 text-center">
+              <CardContent className="p-6">
+                <div className="text-3xl font-bold text-amber-400 mb-2">100%</div>
+                <p className="text-white font-medium">全プロジェクトで無料MVP提供</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-slate-700/30 border-slate-600 text-center">
+              <CardContent className="p-6">
+                <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
+                <p className="text-white font-medium">初期費用ゼロで低リスク導入</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-slate-700/30 border-slate-600 text-center">
+              <CardContent className="p-6">
+                <div className="text-3xl font-bold text-green-400 mb-2">定額制</div>
+                <p className="text-white font-medium">月額定額で改善・改修し放題</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-slate-700/30 border-slate-600 text-center">
+              <CardContent className="p-6">
+                <div className="text-3xl font-bold text-purple-400 mb-2">透明性</div>
+                <p className="text-white font-medium">進捗・課題をオープンに共有</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8">
+                <Cpu className="h-12 w-12 text-amber-400 mb-6" />
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  車両・フリート管理
+                </h3>
+                <p className="text-slate-300 text-sm">
+                  OBD2トラッカーで車両状態・運転データをリモート取得。予防整備・安全運転支援を実現。
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8">
+                <Zap className="h-12 w-12 text-blue-400 mb-6" />
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  業務システム開発
+                </h3>
+                <p className="text-slate-300 text-sm">
+                  オーダーメイドのソフトウェア。スケーラブルで保守性の高いシステムを構築。
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8">
+                <Cpu className="h-12 w-12 text-indigo-400 mb-6" />
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  IoTデータ収集
+                </h3>
+                <p className="text-slate-300 text-sm">
+                  センサーからクラウドまで。リアルタイムデータ収集と分析で新たな価値を創造。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+                デモ・事例のご相談
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* プラン：無料MVPの範囲・上限 */}
+      <section id="plan" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              無料MVPの範囲・上限
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              ご納得いただけるまで、リスクゼロでお試しいただけます
+            </p>
+          </div>
+
+          <div className="bg-slate-700/30 rounded-2xl p-8 md:p-12 border border-slate-600 max-w-4xl mx-auto">
+            <div className="space-y-6 text-slate-200">
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-white">無料で提供するもの</p>
+                  <p className="text-slate-300">
+                    ヒアリング後、実用最小限の機能を持つMVP（Minimum Viable Product）を1つ作成。実際に使える形でお渡しします。
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-white">無料の範囲・上限</p>
+                  <p className="text-slate-300">
+                    MVPは1プロジェクトあたり1回まで無料。複雑さによっては簡易版となる場合があります。詳細はヒアリング時にご説明します。
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-white">本格導入時</p>
+                  <p className="text-slate-300">
+                    MVPをご評価いただき、ご納得いただけましたら月額制で本格運用開始。初期費用を抑えた導入が可能です。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-slate-600 text-center">
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8"
+                >
+                  無料MVPの詳細を相談する
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 流れ：開発プロセス＋納品物 */}
+      <section id="process" className="py-20 bg-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              開発の流れと納品物
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              MVPファーストの開発プロセス
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-black font-bold text-xl">1</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">ヒアリング</h3>
-              <p className="text-slate-300 text-sm">
-                お客様の課題やご要望を詳細にお伺いし、最適なソリューションを検討します
+              <p className="text-slate-300 text-sm mb-4">
+                課題・要望を詳細にお伺いし、最適なソリューションを検討
               </p>
+              <p className="text-amber-400 text-sm font-medium">納品物：要件定義書</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">MVP作成</h3>
-              <p className="text-slate-300 text-sm">
-                実用最小限の機能を持つMVPを作成し、実際の価値を体験していただきます
+              <p className="text-slate-300 text-sm mb-4">
+                実用最小限の機能を持つMVPを作成し、価値を体験いただく
               </p>
+              <p className="text-amber-400 text-sm font-medium">納品物：動作するMVP</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">評価・導入</h3>
-              <p className="text-slate-300 text-sm">
-                MVPを評価いただき、ご納得いただけましたら月額制でご利用開始
+              <p className="text-slate-300 text-sm mb-4">
+                MVPを評価いただき、ご納得いただけたら月額制で本格運用
               </p>
+              <p className="text-amber-400 text-sm font-medium">納品物：本番環境・運用開始</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">4</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">継続改善</h3>
-              <p className="text-slate-300 text-sm">
-                改善・改修を追加料金なしで継続的に実施し、価値を向上させます
+              <p className="text-slate-300 text-sm mb-4">
+                改善・改修を追加料金なしで継続実施
               </p>
+              <p className="text-amber-400 text-sm font-medium">納品物：継続的な機能追加</p>
             </div>
           </div>
 
-          <div className="bg-slate-700/30 rounded-2xl p-8 border border-slate-600">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-amber-400 mb-2">¥0</div>
-                <p className="text-white font-semibold mb-1">無料でお試し</p>
-                <p className="text-slate-300 text-sm">すべてのプロジェクトでMVPを作成</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
-                <p className="text-white font-semibold mb-1">低リスク運用</p>
-                <p className="text-slate-300 text-sm">初期費用を抑えた導入が可能</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-400 mb-2">継続性</div>
-                <p className="text-white font-semibold mb-1">積極的アップデート</p>
-                <p className="text-slate-300 text-sm">継続的な機能改善に追加料金なし</p>
-              </div>
-            </div>
+          <div className="text-center">
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
+              >
+                開発の流れを詳しく相談する
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-slate-800/50">
+      {/* お客様の声：Before→After */}
+      <section id="testimonials" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">ABOUT</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              お客様の声（Before → After）
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              MVPファーストのアプローチで、お客様のリスクを最小限に抑えながら、
-              継続的な価値創造を実現する革新的な開発企業です。
-            </p>
-            <div className="mt-8">
-              <Link href="/about">
-                <Button
-                  variant="outline"
-                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
-                >
-                  詳細を見る
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="h-8 w-8 text-black" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">MVPファースト</h3>
-                <p className="text-slate-300">
-                  ヒアリング後、まずMVPを作成。実用最小限の機能で価値を体験いただいてから本格導入を検討できます。
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">月額制運用</h3>
-                <p className="text-slate-300">
-                  高額な初期投資は不要。月額制により、お客様のリスクを最小限に抑えた導入が可能です。
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-700/50 border-slate-600 hover:bg-slate-700/70 transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Globe className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">継続改善</h3>
-                <p className="text-slate-300">
-                  導入後の改善・改修は追加料金なし。お客様と共に価値を継続的に向上させていきます。
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Promises Section */}
-      <section id="promises" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">私たちの約束</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              お客様との信頼関係を大切にし、確実な価値提供をお約束します
+              導入前後の変化を具体的に
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                title: "無料でMVPを提供", 
-                description: "すべてのプロジェクトで実用最小限の機能を持つMVPを作成し、価値を実感いただきます",
-                icon: "🎯",
-                color: "from-amber-400 to-orange-500"
-              },
-              { 
-                title: "月額制で低リスク", 
-                description: "高額な初期投資は不要。月額制により導入リスクを最小限に抑えます",
-                icon: "💰",
-                color: "from-blue-400 to-purple-500"
-              },
-              { 
-                title: "継続改善は無料", 
-                description: "導入後の機能追加・改修は追加料金なしで継続的に実施します",
-                icon: "🔄",
-                color: "from-green-400 to-teal-500"
-              },
-              { 
-                title: "透明性のある開発", 
-                description: "開発プロセスは常にオープンに。進捗や課題を共有し一緒に解決します",
-                icon: "👥",
-                color: "from-purple-400 to-pink-500"
-              },
-              { 
-                title: "24時間サポート", 
-                description: "運用開始後も安心。問題発生時は迅速に対応いたします",
-                icon: "🛠️",
-                color: "from-red-400 to-orange-500"
-              },
-              { 
-                title: "成果にコミット", 
-                description: "単なるシステム提供ではなく、お客様のビジネス成果向上を追求します",
-                icon: "📈",
-                color: "from-indigo-400 to-violet-500"
-              },
-              { 
-                title: "柔軟な対応力", 
-                description: "仕様変更や追加要望にも柔軟に対応。お客様と共に最適解を見つけます",
-                icon: "🤝",
-                color: "from-cyan-400 to-blue-500"
-              },
-              { 
-                title: "長期パートナー", 
-                description: "一時的な関係ではなく、長期的なビジネスパートナーとして成長を支援します",
-                icon: "🌟",
-                color: "from-yellow-400 to-amber-500"
-              },
-            ].map((promise, index) => (
-              <Card key={index} className="bg-slate-700/30 border-slate-600 hover:bg-slate-700/50 transition-all duration-300 group">
-                <CardContent className="p-6 text-center">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${promise.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                    <span className="text-2xl">{promise.icon}</span>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8">
+                <div className="flex gap-4 mb-6">
+                  <div className="flex-1 p-4 bg-red-900/30 rounded-lg border border-red-800/50">
+                    <p className="text-red-400 font-semibold text-sm mb-2">Before</p>
+                    <p className="text-slate-300 text-sm">
+                      Excelで車両管理。担当者しか更新できず、共有も大変。データの整合性も不安だった。
+                    </p>
                   </div>
-                  <h3 className="text-white font-semibold mb-3">{promise.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{promise.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                  <div className="flex-1 p-4 bg-green-900/30 rounded-lg border border-green-800/50">
+                    <p className="text-green-400 font-semibold text-sm mb-2">After</p>
+                    <p className="text-slate-300 text-sm">
+                      専用システムで一元管理。誰でも更新・参照可能。OBD2連携で車両データも自動取得に。
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-sm italic">
+                  — 車両管理システム導入事例（イメージ）
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-700/50 border-slate-600">
+              <CardContent className="p-8">
+                <div className="flex gap-4 mb-6">
+                  <div className="flex-1 p-4 bg-red-900/30 rounded-lg border border-red-800/50">
+                    <p className="text-red-400 font-semibold text-sm mb-2">Before</p>
+                    <p className="text-slate-300 text-sm">
+                      複数システムに同じデータを二重入力。ミスが多く、工数もかかっていた。
+                    </p>
+                  </div>
+                  <div className="flex-1 p-4 bg-green-900/30 rounded-lg border border-green-800/50">
+                    <p className="text-green-400 font-semibold text-sm mb-2">After</p>
+                    <p className="text-slate-300 text-sm">
+                      一元入力で自動連携。入力工数70%削減。ミスも激減し、業務効率が大幅に向上。
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-sm italic">
+                  — 業務効率化システム導入事例（イメージ）
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+                自社の課題を相談する
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-slate-800/50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">SERVICES</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              よくあるご質問
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
-            <div className="mt-8">
-              <Link href="/services">
-                <Button
-                  variant="outline"
-                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
-                >
-                  全サービスを見る
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+            <p className="text-slate-300">
+              不安を解消。お気軽にご相談ください。
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
-              <CardContent className="p-8">
-                <Cpu className="h-12 w-12 text-amber-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">リモートOBD2トラッカー</h3>
-                <p className="text-slate-300 mb-6">
-                  車両のOBD2ポートに接続し、車の状態や運転データをリモートで取得・監視。
-                  フリート管理や予防整備、安全運転支援を実現します。
-                </p>
-                <Link href="/services/obd2">
-                  <Button
-                    variant="outline"
-                    className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
-                  >
-                    詳細を見る
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem
+              value="faq-1"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                無料MVPの範囲はどこまでですか？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                1プロジェクトあたり、実用最小限の機能を持つMVPを1つ無料で作成します。複雑な要件の場合は簡易版となる場合があります。詳細はヒアリング時にご説明します。
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
-              <CardContent className="p-8">
-                <Zap className="h-12 w-12 text-blue-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">ソフトウェア開発</h3>
-                <p className="text-slate-300 mb-6">
-                  お客様の特定のニーズに合わせたオーダーメイドのソフトウェアソリューションを開発します。
-                  スケーラブルで保守性の高いシステムを構築します。
-                </p>
-                <Link href="/services/software">
-                  <Button
-                    variant="outline"
-                    className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
-                  >
-                    詳細を見る
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+            <AccordionItem
+              value="faq-2"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                保守・サポートはどうなりますか？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                本格導入後は月額制に含まれる形で、継続的な改善・改修を追加料金なしで実施します。問題発生時も迅速に対応いたします。
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
-              <CardContent className="p-8">
-                <Cpu className="h-12 w-12 text-indigo-400 mb-6" />
-                <h3 className="text-2xl font-semibold text-white mb-4">IoTデバイス開発</h3>
-                <p className="text-slate-300 mb-6">
-                  センサーからクラウドまで、包括的なIoTソリューションを開発します。
-                  リアルタイムデータ収集と分析で新たな価値を創造します。
-                </p>
-                <Link href="/services/iot">
-                  <Button
-                    variant="outline"
-                    className="border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white bg-transparent"
-                  >
-                    詳細を見る
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+            <AccordionItem
+              value="faq-3"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                セキュリティは大丈夫ですか？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                データの暗号化、アクセス制御、定期的なセキュリティアップデートなど、業界標準の対策を実施しています。ご要望に応じて追加のセキュリティ対策もご相談可能です。
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem
+              value="faq-4"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                MVPで満足できなかった場合は？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                MVPは無料でお渡ししているため、本格導入されない場合でも費用は発生しません。お気軽にご検討いただけます。
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem
+              value="faq-5"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                相談・ヒアリングは無料ですか？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                はい、相談・ヒアリングは無料です。お気軽にお問い合わせください。
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+                その他のご質問はお問い合わせへ
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* 最後のCTA */}
       <section id="contact" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">CONTACT</h2>
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              まずは無料相談から
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
-            <p className="text-xl text-slate-300">プロジェクトについてお気軽にご相談ください</p>
-            <div className="mt-8">
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+              課題のヒアリング、デモのご依頼、お見積もりまで。お気軽にご連絡ください。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
-                  variant="outline"
-                  className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black bg-transparent"
+                  size="lg"
+                  className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-10 py-3 text-lg"
                 >
-                  お問い合わせ
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  無料相談・お問い合わせ
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              {/*<div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <Mail className="h-6 w-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Email</h3>
-                  <p className="text-slate-300">contact@autosystems.tech</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Phone</h3>
-                  <p className="text-slate-300">+81-3-1234-5678</p>
-                </div>
-              </div>*/}
-
-              {/*<div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Address</h3>
-                  <p className="text-slate-300">東京都千代田区外神田2-10-6宮本ビル3-A</p>
-                </div>
-              </div>
-
-              <div className="flex space-x-4 pt-8">
-                <Button size="icon" variant="outline" className="border-slate-600 hover:bg-slate-700 bg-transparent">
-                  <Github className="h-5 w-5" />
-                </Button>
-                <Button size="icon" variant="outline" className="border-slate-600 hover:bg-slate-700 bg-transparent">
-                  <Twitter className="h-5 w-5" />
-                </Button>
-                <Button size="icon" variant="outline" className="border-slate-600 hover:bg-slate-700 bg-transparent">
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-              </div>*/}
-            </div>
-
-            {/*<Card className="bg-slate-700/50 border-slate-600">
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-white font-medium mb-2">お名前</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400"
-                      placeholder="山田太郎"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-white font-medium mb-2">メールアドレス</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400"
-                      placeholder="example@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-white font-medium mb-2">メッセージ</label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-400"
-                      placeholder="お問い合わせ内容をご記入ください"
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3">
-                    送信する
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>*/}
-          </div>
         </div>
       </section>
+
       <Footer />
     </div>
   )

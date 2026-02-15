@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 interface HeaderProps {
-  activeSection?: "about" | "promises" | "services" | "contact"
+  activeSection?: "problems" | "solution" | "proof" | "plan" | "process" | "testimonials" | "faq" | "contact" | "about"
 }
 
 export default function Header({ activeSection }: HeaderProps) {
@@ -15,37 +15,77 @@ export default function Header({ activeSection }: HeaderProps) {
               <h1 className="text-xl font-bold text-amber-400">AutoSystems, Inc.</h1>
             </Link>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-10 flex items-baseline space-x-6">
               <Link
-                href="/#about"
+                href="/#problems"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "problems"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                課題
+              </Link>
+              <Link
+                href="/#solution"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "solution"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                解決
+              </Link>
+              <Link
+                href="/#proof"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "proof"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                実績
+              </Link>
+              <Link
+                href="/#plan"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "plan"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                プラン
+              </Link>
+              <Link
+                href="/#process"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "process"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                流れ
+              </Link>
+              <Link
+                href="/#faq"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "faq"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/about"
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   activeSection === "about"
                     ? "text-amber-400"
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                ABOUT
-              </Link>
-              <Link
-                href="/#promises"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "promises"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                PROMISES
-              </Link>
-              <Link
-                href="/#services"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "services"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                SERVICES
+                私たちについて
               </Link>
               <Link
                 href="/#contact"
@@ -55,7 +95,7 @@ export default function Header({ activeSection }: HeaderProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                CONTACT
+                お問い合わせ
               </Link>
             </div>
           </div>

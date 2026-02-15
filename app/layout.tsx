@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'AutoSystems, Inc.',
-  description: 'MVPファーストのアプローチで、お客様のリスクを最小限に抑えながら、継続的な価値創造を実現する革新的な開発企業',
+  description: '無料MVPで始めるシステム開発会社。車両管理・業務効率化・IoTを初期費用ゼロで始められます。',
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>{children}</body>
     </html>
   )

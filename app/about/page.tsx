@@ -33,6 +33,15 @@ export default function AboutPage() {
               世界中の人々に革新的なソリューションを提供します。
             </p>
           </div>
+
+          {/* 経営理念 */}
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 border-t border-b border-slate-600">
+            <h2 className="text-2xl font-bold text-amber-400 mb-6">経営理念</h2>
+            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
+              AutoSystemsの使命は、世界中のシステムを自動化し、
+              世界中の人がアクセスできて、使えるようにすることです。
+            </p>
+          </div>
         </div>
       </section>
 
@@ -80,7 +89,8 @@ export default function AboutPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-3">ミッション</h3>
                   <p className="text-slate-300">
-                  AutoSystemsの使命は、世界中のシステムを自動化し、世界中の人がアクセスできて使えるようにすることです。
+                    経営理念に基づき、私たちは世界中のシステムを自動化し、
+                    世界中の人がアクセスできて使えるようにすることを目指します。
                   </p>
                 </CardContent>
               </Card>
@@ -202,7 +212,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -233,7 +243,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
       <Footer />
     </div>
   )
