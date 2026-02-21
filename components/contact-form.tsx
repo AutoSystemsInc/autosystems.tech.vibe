@@ -1,10 +1,20 @@
 'use client'
 
 import { useState, useTransition } from 'react'
+import Script from 'next/script'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send, MessageSquare, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import { submitContactForm } from '@/lib/actions'
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
+}
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition()
@@ -16,6 +26,32 @@ export default function ContactForm() {
     
     startTransition(async () => {
       try {
+        // reCAPTCHA v3 トークンを取得（ボット対策）
+        const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+        if (siteKey) {
+          if (typeof window === 'undefined' || !window.grecaptcha) {
+            setMessage({ type: 'error', text: '認証の準備ができていません。しばらく待ってから再度お試しください。' })
+            return
+          }
+          try {
+            const token = await new Promise<string>((resolve, reject) => {
+              window.grecaptcha!.ready(async () => {
+                try {
+                  const t = await window.grecaptcha!.execute(siteKey, { action: 'contact' })
+                  resolve(t)
+                } catch (err) {
+                  reject(err)
+                }
+              })
+            })
+            formData.set('recaptchaToken', token)
+          } catch (err) {
+            console.error('reCAPTCHA error:', err)
+            setMessage({ type: 'error', text: '認証に失敗しました。ページを再読み込みしてお試しください。' })
+            return
+          }
+        }
+
         const result = await submitContactForm(formData)
         
         if (result.success) {
@@ -38,9 +74,18 @@ export default function ContactForm() {
     })
   }
 
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
   return (
-    <Card className="bg-slate-700/50 border-slate-600">
-      <CardContent className="p-8">
+    <>
+      {siteKey && (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
+          strategy="lazyOnload"
+        />
+      )}
+      <Card className="bg-slate-700/50 border-slate-600">
+        <CardContent className="p-8">
         <div className="flex items-center mb-6">
           <MessageSquare className="h-6 w-6 text-amber-400 mr-3" />
           <h2 className="text-2xl font-bold text-white">お問い合わせフォーム</h2>
@@ -192,5 +237,6 @@ export default function ContactForm() {
         </form>
       </CardContent>
     </Card>
+    </>
   )
 } 

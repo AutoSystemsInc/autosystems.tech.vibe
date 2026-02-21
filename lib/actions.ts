@@ -12,7 +12,37 @@ export interface ContactFormData {
   message: string
 }
 
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY
+  if (!secretKey) return true // 開発時は検証をスキップ
+
+  try {
+    const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${secretKey}&response=${token}`,
+    })
+    const json = await res.json()
+    // v3: success かつ score >= 0.5 で人間と判定（0.0=ボット, 1.0=人間）
+    return json.success === true && (json.score ?? 1) >= 0.5
+  } catch {
+    return false
+  }
+}
+
 export async function submitContactForm(formData: FormData) {
+  // reCAPTCHA 検証（ボット対策）
+  const recaptchaToken = formData.get('recaptchaToken') as string | null
+  if (process.env.RECAPTCHA_SECRET_KEY) {
+    if (!recaptchaToken) {
+      return { success: false, error: '認証に失敗しました。ページを再読み込みしてお試しください。' }
+    }
+    const isValid = await verifyRecaptcha(recaptchaToken)
+    if (!isValid) {
+      return { success: false, error: '認証に失敗しました。ボットの可能性があるため送信できません。' }
+    }
+  }
+
   // フォームデータを取得
   const data: ContactFormData = {
     name: formData.get('name') as string,
