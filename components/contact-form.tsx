@@ -11,7 +11,8 @@ declare global {
   interface Window {
     grecaptcha?: {
       ready: (callback: () => void) => void
-      execute: (siteKey: string, options: { action: string }) => Promise<string>
+      getResponse: () => string
+      reset: () => void
     }
   }
 }
@@ -26,30 +27,19 @@ export default function ContactForm() {
     
     startTransition(async () => {
       try {
-        // reCAPTCHA v3 トークンを取得（ボット対策）
+        // reCAPTCHA v2 トークンを取得（「私はロボットではありません」チェック）
         const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
         if (siteKey) {
           if (typeof window === 'undefined' || !window.grecaptcha) {
             setMessage({ type: 'error', text: '認証の準備ができていません。しばらく待ってから再度お試しください。' })
             return
           }
-          try {
-            const token = await new Promise<string>((resolve, reject) => {
-              window.grecaptcha!.ready(async () => {
-                try {
-                  const t = await window.grecaptcha!.execute(siteKey, { action: 'contact' })
-                  resolve(t)
-                } catch (err) {
-                  reject(err)
-                }
-              })
-            })
-            formData.set('recaptchaToken', token)
-          } catch (err) {
-            console.error('reCAPTCHA error:', err)
-            setMessage({ type: 'error', text: '認証に失敗しました。ページを再読み込みしてお試しください。' })
+          const token = window.grecaptcha.getResponse()
+          if (!token) {
+            setMessage({ type: 'error', text: '「私はロボットではありません」にチェックを入れてください。' })
             return
           }
+          formData.set('recaptchaToken', token)
         }
 
         const result = await submitContactForm(formData)
@@ -60,7 +50,10 @@ export default function ContactForm() {
           // フォームをリセット
           const form = document.getElementById('contact-form') as HTMLFormElement
           form?.reset()
-          
+          // reCAPTCHA v2 をリセット
+          if (siteKey && window.grecaptcha) {
+            window.grecaptcha.reset()
+          }
           // 3秒後にボタンを元の状態に戻す
           setTimeout(() => {
             setIsSubmitted(false)
@@ -80,7 +73,7 @@ export default function ContactForm() {
     <>
       {siteKey && (
         <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
+          src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
       )}
@@ -91,22 +84,14 @@ export default function ContactForm() {
           <h2 className="text-2xl font-bold text-white">お問い合わせフォーム</h2>
         </div>
 
-        {message && (
-          <div className={`p-4 rounded-lg mb-6 flex items-center ${
-            message.type === 'success' 
-              ? 'bg-green-900/50 border border-green-600 text-green-300'
-              : 'bg-red-900/50 border border-red-600 text-red-300'
-          }`}>
-            {message.type === 'success' ? (
-              <CheckCircle className="h-5 w-5 mr-2" />
-            ) : (
-              <AlertCircle className="h-5 w-5 mr-2" />
-            )}
-            {message.text}
-          </div>
-        )}
-
-        <form id="contact-form" action={handleSubmit} className="space-y-6">
+        <form
+          id="contact-form"
+          className="space-y-6"
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleSubmit(new FormData(e.currentTarget))
+          }}
+        >
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label className="block text-white font-medium mb-2">お名前 *</label>
@@ -192,6 +177,25 @@ export default function ContactForm() {
               required
             ></textarea>
           </div>
+
+          {siteKey && (
+            <div className="g-recaptcha" data-sitekey={siteKey} />
+          )}
+
+          {message && (
+            <div className={`p-4 rounded-lg flex items-center ${
+              message.type === 'success' 
+                ? 'bg-green-900/50 border border-green-600 text-green-300'
+                : 'bg-red-900/50 border border-red-600 text-red-300'
+            }`}>
+              {message.type === 'success' ? (
+                <CheckCircle className="h-5 w-5 mr-2" />
+              ) : (
+                <AlertCircle className="h-5 w-5 mr-2" />
+              )}
+              {message.text}
+            </div>
+          )}
 
           {/*<div className="flex items-start space-x-3">
             <input

@@ -23,8 +23,8 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
       body: `secret=${secretKey}&response=${token}`,
     })
     const json = await res.json()
-    // v3: success かつ score >= 0.5 で人間と判定（0.0=ボット, 1.0=人間）
-    return json.success === true && (json.score ?? 1) >= 0.5
+    // v2: success で人間と判定（チェックボックス完了時）
+    return json.success === true
   } catch {
     return false
   }
