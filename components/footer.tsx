@@ -14,7 +14,7 @@ export default function Footer() {
               お問い合わせ
             </Link>
           </div>
-          <p className="text-slate-400">© 2025 AutoSystems, Inc. All rights reserved.</p>
+          <p className="text-slate-400">© 2026 AutoSystems, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

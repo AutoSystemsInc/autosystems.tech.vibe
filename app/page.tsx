@@ -9,20 +9,24 @@ import {
 } from "@/components/ui/accordion"
 import {
   ArrowRight,
-  Globe,
   Zap,
-  FileSpreadsheet,
+  CalendarCheck,
   Copy,
   UserCog,
   Cpu,
   CheckCircle2,
   MessageCircle,
   Play,
+  ExternalLink,
+  Sparkles,
+  FileSignature,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import FixedCTA from "@/components/fixed-cta"
+import { proprietaryServices } from "@/lib/proprietary-services"
 
 export default function HomePage() {
   return (
@@ -37,17 +41,13 @@ export default function HomePage() {
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
-            <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50 px-4 py-1">
-              MVPファースト開発
-            </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               <span>可能性を、</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">形に。</span>
             </h1>
 
             <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              車両管理・業務効率化・IoTデータ収集など、まず無料でMVPを作成。
-              価値を実感してから月額制で本格導入。初期費用ゼロ、リスクゼロで始められます。
+            AutoSystemsの使命は、世界中のシステムを自動化し、<br/>世界中の人がアクセスできて使えるようにすることです。
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -57,7 +57,7 @@ export default function HomePage() {
                   className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  無料相談・デモ依頼
+                  お問い合わせ
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -76,6 +76,86 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 自社サービス */}
+      <section id="products" className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(251,191,36,0.15),transparent)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="bg-white/5 text-amber-300 border-white/10 mb-4">
+              <Sparkles className="inline h-3.5 w-3.5 mr-1.5 align-text-bottom" />
+              Proprietary Services
+            </Badge>
+            <h2 className="text-4xl font-bold text-white mb-4">製品・サービス</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8" />
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              システムの自動化で、業務効率化 & 生活をより便利に、より快適に。
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {proprietaryServices.map((svc) => (
+              <div
+                key={svc.url}
+                className="relative flex flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-8 shadow-xl shadow-black/30 backdrop-blur-md transition-all duration-300 hover:border-amber-500/40 hover:shadow-amber-500/10"
+              >
+                <div
+                  className={`pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl ${svc.glow} opacity-80`}
+                />
+                <div className="mb-6 flex items-start gap-4">
+                  {svc.logoSrc ? (
+                    <div className="inline-flex w-fit max-w-[min(100%,12rem)] shrink-0 rounded-2xl bg-white/95 p-2 shadow-lg ring-1 ring-white/25">
+                      <Image
+                        src={svc.logoSrc}
+                        alt=""
+                        width={260}
+                        height={56}
+                        className="block h-12 w-auto max-w-full object-contain object-left"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${svc.gradient} text-lg font-bold text-white shadow-lg`}
+                    >
+                      {svc.iconLetter}
+                    </div>
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-2 pr-2">{svc.name}</h3>
+                    <p
+                      className={`text-base font-medium text-transparent bg-clip-text bg-gradient-to-r ${svc.taglineGradient}`}
+                    >
+                      {svc.tagline}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed grow mb-8">{svc.description}</p>
+                <a
+                  href={svc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center text-amber-400 text-sm font-semibold hover:text-amber-300"
+                >
+                  サービスサイトを見る
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-14">
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                className="border-slate-500 text-slate-200 hover:bg-slate-800 hover:text-white bg-transparent"
+              >
+                お問い合わせ
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 課題提示：よくある悩み */}
       <section id="problems" className="py-20 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,8 +165,8 @@ export default function HomePage() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Excel管理・二重入力・属人化など、多くの企業が抱える業務効率化の課題。
-              私たちはその解決を専門としています。
+              施設予約・社内申請・属人化など、多くの企業が抱える業務効率化の課題。
+              オーダーメイドのシステム構築でその解決を専門としています。
             </p>
           </div>
 
@@ -100,7 +180,7 @@ export default function HomePage() {
                   属人化で業務が止まる
                 </h3>
                 <p className="text-slate-300">
-                  特定の人にしか分からないExcelや手順。担当者がいないと業務が回らない。引き継ぎも大変で、リスクが高い。
+                  特定の人にしか分からない手順や運用ルール。担当者が不在だと業務が回らず、引き継ぎも大変で、リスクが高い。
                 </p>
               </CardContent>
             </Card>
@@ -108,13 +188,13 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:border-amber-500/50 transition-colors">
               <CardContent className="p-8">
                 <div className="w-14 h-14 bg-orange-500/20 rounded-full flex items-center justify-center mb-6">
-                  <FileSpreadsheet className="h-7 w-7 text-orange-400" />
+                  <CalendarCheck className="h-7 w-7 text-orange-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
-                  Excelの限界を感じている
+                  施設予約・社内申請が煩雑
                 </h3>
                 <p className="text-slate-300">
-                  データ量が増えると重くなる、複数人での共有が難しい、ミスが起きやすい。Excelではもう限界だと感じている。
+                  決裁書・予約申請書など、社内独自の複雑な手続きが必要な施設予約。汎用ツールでは対応しきれず、紙やメールでの運用に逆戻り…。
                 </p>
               </CardContent>
             </Card>
@@ -137,7 +217,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/contact">
               <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
-                課題解決の相談は無料です
+                お問い合わせ
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -176,13 +256,13 @@ export default function HomePage() {
             <Card className="bg-slate-700/50 border-slate-600">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Globe className="h-8 w-8 text-white" />
+                  <FileSignature className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">
-                  Excel → 専用システム
+                  複雑な申請業務 → オーダーメイド構築
                 </h3>
                 <p className="text-slate-300">
-                  データ量に強い、共有しやすい、ミスを防ぐ。業務に特化したシステムでExcelの限界を超えます。
+                  決裁書・予約申請書など、社内独自の承認フローもそのままシステム化。施設予約システムを1から構築した実績で、貴社業務に完全フィットさせます。
                 </p>
               </CardContent>
             </Card>
@@ -232,26 +312,26 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="bg-slate-700/30 border-slate-600 text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-amber-400 mb-2">100%</div>
-                <p className="text-white font-medium">全プロジェクトで無料MVP提供</p>
+                <div className="text-3xl font-bold text-amber-400 mb-2">自社</div>
+                <p className="text-white font-medium">複数のクラウドプロダクトを運用・改善</p>
               </CardContent>
             </Card>
             <Card className="bg-slate-700/30 border-slate-600 text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-400 mb-2">月額制</div>
-                <p className="text-white font-medium">初期費用ゼロで低リスク導入</p>
+                <div className="text-3xl font-bold text-blue-400 mb-2">受託</div>
+                <p className="text-white font-medium">Web・業務システム・アプリのオーダーメイド</p>
               </CardContent>
             </Card>
             <Card className="bg-slate-700/30 border-slate-600 text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-green-400 mb-2">定額制</div>
-                <p className="text-white font-medium">月額定額で改善・改修し放題</p>
+                <div className="text-3xl font-bold text-green-400 mb-2">IoT</div>
+                <p className="text-white font-medium">車両・センサーからクラウドまで一気通貫</p>
               </CardContent>
             </Card>
             <Card className="bg-slate-700/30 border-slate-600 text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-purple-400 mb-2">透明性</div>
-                <p className="text-white font-medium">進捗・課題をオープンに共有</p>
+                <div className="text-3xl font-bold text-purple-400 mb-2">伴走</div>
+                <p className="text-white font-medium">リリース後の運用・改善も継続サポート</p>
               </CardContent>
             </Card>
           </div>
@@ -270,12 +350,12 @@ export default function HomePage() {
             </Card>
             <Card className="bg-slate-700/50 border-slate-600">
               <CardContent className="p-8">
-                <Zap className="h-12 w-12 text-blue-400 mb-6" />
+                <CalendarCheck className="h-12 w-12 text-blue-400 mb-6" />
                 <h3 className="text-xl font-semibold text-white mb-4">
-                  業務システム開発
+                  施設予約・業務システム
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  オーダーメイドのソフトウェア。スケーラブルで保守性の高いシステムを構築。
+                  決裁書・予約申請書など社内独自の承認フローを伴う施設予約システムを1から構築した実績あり。受付・在庫・基幹連携も含めオーダーメイドで対応します。
                 </p>
               </CardContent>
             </Card>
@@ -295,7 +375,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/contact">
               <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
-                デモ・事例のご相談
+                お問い合わせ
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -303,16 +383,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* プラン：無料MVPの範囲・上限 */}
-      <section id="plan" className="py-20">
+      {/* 進め方：自社プロダクト or 開発 */}
+      <section id="model" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              無料MVPの範囲・上限
+              ご相談の進め方
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              ご納得いただけるまで、リスクゼロでお試しいただけます
+              課題に合わせて、既存プロダクトの活用からフルオーダーの開発まで柔軟にご提案します
             </p>
           </div>
 
@@ -321,27 +401,27 @@ export default function HomePage() {
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">無料で提供するもの</p>
+                  <p className="font-semibold text-white">自社サービスでできること</p>
                   <p className="text-slate-300">
-                    ヒアリング後、実用最小限の機能を持つMVP（Minimum Viable Product）を1つ作成。実際に使える形でお渡しします。
+                    経営・販売・車両データなど、当社クラウドでカバーできる領域はまずプロダクトをご紹介。カスタムやAPI連携も含めて設計します。
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">無料の範囲・上限</p>
+                  <p className="font-semibold text-white">受託・オーダーメイド</p>
                   <p className="text-slate-300">
-                    MVPは1プロジェクトあたり1回まで無料。複雑さによっては簡易版となる場合があります。詳細はヒアリング時にご説明します。
+                    決裁書・予約申請書など社内独自の複雑な手続きを伴う施設予約システムを1から構築した実績があります。顧客ポータル、在庫・シフトなど、汎用ツールでは賄えない業務要件もヒアリングのうえ要件定義から運用まで一気通貫で対応します。
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">本格導入時</p>
+                  <p className="font-semibold text-white">お見積もり・契約後</p>
                   <p className="text-slate-300">
-                    MVPをご評価いただき、ご納得いただけましたら月額制で本格運用開始。初期費用を抑えた導入が可能です。
+                    スコープと体制を明示したうえでお見積もり。リリース後は保守・機能追加など、運用フェーズでも継続して伴走できます。
                   </p>
                 </div>
               </div>
@@ -353,7 +433,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8"
                 >
-                  無料MVPの詳細を相談する
+                  お問い合わせ
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -371,7 +451,7 @@ export default function HomePage() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              MVPファーストの開発プロセス
+              プロダクト活用からフル開発まで、一貫した進行
             </p>
           </div>
 
@@ -382,42 +462,42 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">ヒアリング</h3>
               <p className="text-slate-300 text-sm mb-4">
-                課題・要望を詳細にお伺いし、最適なソリューションを検討
+                課題・既存運用・制約を整理し、プロダクト適合か開発かを査定
               </p>
-              <p className="text-amber-400 text-sm font-medium">納品物：要件定義書</p>
+              <p className="text-amber-400 text-sm font-medium">納品物：要件整理・方針案</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">MVP作成</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">設計・試作</h3>
               <p className="text-slate-300 text-sm mb-4">
-                実用最小限の機能を持つMVPを作成し、価値を体験いただく
+                UI・API連携・アーキテクチャを設計し、早期に動くもので認識合わせ
               </p>
-              <p className="text-amber-400 text-sm font-medium">納品物：動作するMVP</p>
+              <p className="text-amber-400 text-sm font-medium">納品物：設計資料・試作環境</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">評価・導入</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">実装・リリース</h3>
               <p className="text-slate-300 text-sm mb-4">
-                MVPを評価いただき、ご納得いただけたら月額制で本格運用
+                本番品質での実装、テスト、デプロイ。セキュリティと運用性を確保
               </p>
-              <p className="text-amber-400 text-sm font-medium">納品物：本番環境・運用開始</p>
+              <p className="text-amber-400 text-sm font-medium">納品物：本番環境・ドキュメント</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">4</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">継続改善</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">運用・改善</h3>
               <p className="text-slate-300 text-sm mb-4">
-                改善・改修を追加料金なしで継続実施
+                モニタリング、問い合わせ対応、機能追加など継続的に改善
               </p>
-              <p className="text-amber-400 text-sm font-medium">納品物：継続的な機能追加</p>
+              <p className="text-amber-400 text-sm font-medium">ご契約に応じたサポート</p>
             </div>
           </div>
 
@@ -455,18 +535,18 @@ export default function HomePage() {
                   <div className="flex-1 p-4 bg-red-900/30 rounded-lg border border-red-800/50">
                     <p className="text-red-400 font-semibold text-sm mb-2">Before</p>
                     <p className="text-slate-300 text-sm">
-                      Excelで車両管理。担当者しか更新できず、共有も大変。データの整合性も不安だった。
+                      施設予約は紙の予約申請書と決裁書を回覧。承認まで数日かかり、ダブルブッキングも発生していた。
                     </p>
                   </div>
                   <div className="flex-1 p-4 bg-green-900/30 rounded-lg border border-green-800/50">
                     <p className="text-green-400 font-semibold text-sm mb-2">After</p>
                     <p className="text-slate-300 text-sm">
-                      専用システムで一元管理。誰でも更新・参照可能。OBD2連携で車両データも自動取得に。
+                      申請から決裁までシステム上で完結。社内独自の承認フローもそのまま再現し、ダブルブッキングもゼロに。
                     </p>
                   </div>
                 </div>
                 <p className="text-slate-400 text-sm italic">
-                  — 車両管理システム導入事例（イメージ）
+                  — 施設予約システムを1から構築した事例（イメージ）
                 </p>
               </CardContent>
             </Card>
@@ -524,10 +604,10 @@ export default function HomePage() {
               className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
             >
               <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
-                無料MVPの範囲はどこまでですか？
+                自社サービスと受託開発はどう使い分けますか？
               </AccordionTrigger>
               <AccordionContent className="text-slate-300 pb-6">
-                1プロジェクトあたり、実用最小限の機能を持つMVPを1つ無料で作成します。複雑な要件の場合は簡易版となる場合があります。詳細はヒアリング時にご説明します。
+                まずヒアリングで課題を整理し、既存プロダクトで十分か、カスタムや単体開発がよいかをご提案します。併用（プロダクト＋個別開発）も可能です。
               </AccordionContent>
             </AccordionItem>
 
@@ -536,15 +616,27 @@ export default function HomePage() {
               className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
             >
               <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
-                保守・サポートはどうなりますか？
+                施設予約システムなど、業務特化の開発は依頼できますか？
               </AccordionTrigger>
               <AccordionContent className="text-slate-300 pb-6">
-                本格導入後は月額制に含まれる形で、継続的な改善・改修を追加料金なしで実施します。問題発生時も迅速に対応いたします。
+                はい。決裁書・予約申請書など社内独自の複雑な手続きを伴う施設予約システムを1から構築した実績があります。予約枠・承認フロー・顧客管理・決済連携・在庫・外部カレンダー連携など、貴社の業務フローに沿った設計から実装までオーダーメイドで対応します。お問い合わせにて要件を伺います。
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem
               value="faq-3"
+              className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
+            >
+              <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
+                保守・サポートはどうなりますか？
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-300 pb-6">
+                リリース後の監視、不具合対応、機能追加などは、ご契約の形態（月額保守・スポット対応など）に合わせて設計します。範囲はお見積もり時に明確化します。
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem
+              value="faq-4"
               className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
             >
               <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
@@ -556,19 +648,19 @@ export default function HomePage() {
             </AccordionItem>
 
             <AccordionItem
-              value="faq-4"
+              value="faq-5"
               className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
             >
               <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
-                MVPで満足できなかった場合は？
+                お見積もり前に契約や費用はかかりますか？
               </AccordionTrigger>
               <AccordionContent className="text-slate-300 pb-6">
-                MVPは無料でお渡ししているため、本格導入されない場合でも費用は発生しません。お気軽にご検討いただけます。
+                ヒアリングと概算お見積もりの段階で費用が発生することはありません。内容・スケジュールにご納得いただいたうえで正式にお見積もり・契約となります。
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem
-              value="faq-5"
+              value="faq-6"
               className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 data-[state=open]:border-amber-500/50"
             >
               <AccordionTrigger className="text-white hover:text-amber-400 hover:no-underline py-6">
@@ -596,11 +688,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-white mb-4">
-              まずは無料相談から
+              お問い合わせ
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
-              課題のヒアリング、デモのご依頼、お見積もりまで。お気軽にご連絡ください。
+              自社サービスの導入、予約システムなどの開発、その他の課題整理やお見積もりまで。お気軽にご連絡ください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -609,7 +701,7 @@ export default function HomePage() {
                   className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-10 py-3 text-lg"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  無料相談・お問い合わせ
+                  お問い合わせ
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>

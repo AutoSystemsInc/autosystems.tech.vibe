@@ -13,7 +13,7 @@ export default function FixedCTA() {
           className="bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 transition-all"
         >
           <MessageCircle className="mr-2 h-5 w-5" />
-          無料相談
+          お問い合わせ
         </Button>
       </Link>
     </div>

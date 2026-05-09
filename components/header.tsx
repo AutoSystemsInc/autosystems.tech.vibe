@@ -1,7 +1,18 @@
 import Link from "next/link"
 
 interface HeaderProps {
-  activeSection?: "problems" | "solution" | "proof" | "plan" | "process" | "testimonials" | "faq" | "contact" | "about"
+  activeSection?:
+    | "products"
+    | "problems"
+    | "solution"
+    | "proof"
+    | "model"
+    | "process"
+    | "testimonials"
+    | "faq"
+    | "contact"
+    | "about"
+    | "services"
 }
 
 export default function Header({ activeSection }: HeaderProps) {
@@ -17,6 +28,16 @@ export default function Header({ activeSection }: HeaderProps) {
           </div>
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-6">
+              <Link
+                href="/#products"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === "products"
+                    ? "text-amber-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                自社サービス
+              </Link>
               <Link
                 href="/#problems"
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
@@ -48,14 +69,14 @@ export default function Header({ activeSection }: HeaderProps) {
                 実績
               </Link>
               <Link
-                href="/#plan"
+                href="/#model"
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "plan"
+                  activeSection === "model"
                     ? "text-amber-400"
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                プラン
+                進め方
               </Link>
               <Link
                 href="/#process"

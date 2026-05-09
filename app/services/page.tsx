@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Target, Zap, Cloud, Brain, Shield, Cog, CheckCircle, ArrowRight, Cpu } from "lucide-react"
+import { ArrowLeft, Zap, Cloud, Brain, Shield, Cog, CheckCircle, ArrowRight, Cpu, ExternalLink, Sparkles } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { proprietaryServices } from "@/lib/proprietary-services"
 
 export default function ServicesPage() {
   return (
@@ -29,9 +31,72 @@ export default function ServicesPage() {
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">サービス一覧</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              MVPファーストのアプローチで、リスクを最小限に抑えながら
-              お客様のビジネスを次のレベルへと導きます。
+              自社で運営するクラウドサービスと、オーダーメイドの受託開発の両輪で
+              課題解決まで伴走します。予約・業務システム・IoT連携にも対応します。
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 自社サービス */}
+      <section className="py-12 bg-slate-800/40 border-y border-slate-700/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <Badge variant="outline" className="border-amber-400/50 text-amber-300 bg-amber-400/10 mb-3">
+              <Sparkles className="inline h-3.5 w-3.5 mr-1 align-text-bottom" />
+              AutoSystems SaaS
+            </Badge>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">自社サービス（プロダクト）</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
+              サービスサイトで機能・資料を確認いただけます。導入・カスタム・API連携はお問い合わせよりご相談ください。
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {proprietaryServices.map((svc) => (
+              <div
+                key={svc.url}
+                className="relative rounded-xl border border-slate-600/80 bg-slate-900/50 p-6 transition-all hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5"
+              >
+                <div
+                  className={`absolute -top-px left-8 right-8 h-px bg-gradient-to-r ${svc.gradient} opacity-70`}
+                />
+                <div className="mb-4 flex items-start gap-3">
+                  {svc.logoSrc ? (
+                    <div className="inline-flex w-fit max-w-[min(100%,10rem)] shrink-0 rounded-lg bg-white/95 p-1.5 shadow-inner ring-1 ring-white/15">
+                      <Image
+                        src={svc.logoSrc}
+                        alt=""
+                        width={220}
+                        height={48}
+                        className="block h-11 w-auto max-w-full object-contain object-left"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${svc.gradient} text-sm font-bold text-white shadow-md ring-1 ring-white/10`}
+                    >
+                      {svc.iconLetter}
+                    </div>
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg font-semibold text-white leading-snug pr-2 mb-1">{svc.name}</h3>
+                    <p className={`text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r ${svc.taglineGradient} mb-2`}>
+                      {svc.tagline}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-4">{svc.description}</p>
+                <a
+                  href={svc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center text-amber-400 text-sm font-semibold hover:text-amber-300"
+                >
+                  サービスサイトを見る
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -102,8 +167,8 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-slate-300">
-                  MVPで要件を具体化し、お客様に実際に操作いただいて仕様を確定。
-                  月額制で運用開始後も継続的に機能を拡張していきます。
+                  要件を整理し、試作やプロトタイプで早期に認識を揃えたうえで本実装へ。
+                  リリース後も改善サイクルで継続的に機能を拡張できます。
                 </p>
 
                 <div className="space-y-3">
@@ -245,9 +310,9 @@ export default function ServicesPage() {
             お客様のビジネス課題を解決する最適なソリューションを提案いたします。 まずはお気軽にご相談ください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#contact">
+            <Link href="/contact">
               <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8">
-                無料相談を申し込む
+                お問い合わせ
               </Button>
             </Link>
           </div>

@@ -29,8 +29,8 @@ export default function SoftwarePage() {
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">ソフトウェア開発</h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              お客様の特定のニーズに合わせたオーダーメイドのソフトウェアソリューションを開発します。
-              MVPで要件を具体化し、月額制で継続的に機能を拡張していきます。
+              お客様の業務や顧客体験に合わせたオーダーメイドのソフトウェアを開発します。
+              ヒアリングと試作で要件を固め、運用フェーズでも継続的に機能を強化できます。
             </p>
           </div>
         </div>
@@ -43,15 +43,15 @@ export default function SoftwarePage() {
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">オーダーメイド開発の特徴</h2>
               <p className="text-slate-300 mb-6">
-                お客様のビジネス要件に完全に最適化されたソフトウェアを開発します。
-                MVPで要件を具体化し、実際に操作いただいて仕様を確定。
-                運用開始後も月額制で継続的に機能を拡張し、ビジネス成長をサポートします。
+                お客様のビジネス要件に最適化されたソフトウェアを開発します。
+                試作やプロトタイプで要件を共有しながら仕様を固められます。
+                運用開始後もご契約に応じて継続的に機能追加・保守を行えます。
               </p>
               <div className="space-y-4">
                 {[
-                  "MVPによる要件具体化",
-                  "ユーザー参加型の仕様確定",
-                  "月額制での継続的機能拡張", 
+                  "ヒアリングと試作での要件確定",
+                  "ユーザー参加型の仕様検討",
+                  "運用フェーズでの継続改善", 
                   "スケーラブルなアーキテクチャ",
                   "保守性の高いコード品質",
                   "最新技術スタックの活用",
@@ -66,11 +66,10 @@ export default function SoftwarePage() {
             <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600">
               <Zap className="h-16 w-16 text-blue-400 mx-auto mb-6" />
               <h3 className="text-xl font-semibold text-white text-center mb-4">
-                MVPファースト開発
+                段階的な開発
               </h3>
               <p className="text-slate-300 text-center">
-                大規模な開発に入る前に、まずMVPで核となる機能を実装。
-                実際の使用感を確認してから本格開発に進みます。
+                核となる機能から優先順位を付けて段階的に実装し、運用フィードバックを取り込みながら拡張していきます。
               </p>
             </div>
           </div>
@@ -235,13 +234,13 @@ export default function SoftwarePage() {
               },
               {
                 step: "03",
-                title: "MVP開発",
-                description: "最小限の機能でプロトタイプを開発",
-                details: ["コア機能実装", "ユーザーテスト", "フィードバック収集"]
+                title: "試作・コア開発",
+                description: "優先機能のプロトタイプと検証",
+                details: ["コア機能実装", "ユーザーテスト", "フィードバック反映"]
               },
               {
                 step: "04",
-                title: "本格開発",
+                title: "本実装・拡張",
                 description: "スプリント単位での機能開発",
                 details: ["アジャイル開発", "品質保証", "テスト自動化"]
               },
@@ -365,14 +364,14 @@ export default function SoftwarePage() {
             <Card className="bg-slate-700/50 border-slate-600 hover:shadow-2xl transition-all duration-300">
               <CardHeader className="text-center">
                 <Badge variant="outline" className="border-amber-400 text-amber-400 w-fit mx-auto mb-4">
-                  MVP開発
+                  要件整理・試作
                 </Badge>
-                <div className="text-3xl font-bold text-amber-400 mb-2">¥0</div>
-                <p className="text-white font-semibold">初回MVP開発</p>
+                <div className="text-3xl font-bold text-amber-400 mb-2">要相談</div>
+                <p className="text-white font-semibold">スコープに応じた提案</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-2">
-                  {["要件定義・設計", "MVP開発", "ユーザーテスト", "フィードバック収集", "改善提案"].map((feature, index) => (
+                  {["課題・業務フローの整理", "試作・PoCでの検証", "仕様ドラフト作成", "概算見積もり", "導入ロードマップ"].map((feature, index) => (
                     <li key={index} className="flex items-center text-slate-300 text-sm">
                       <CheckCircle className="h-4 w-4 text-amber-400 mr-2" />
                       {feature}
@@ -433,13 +432,13 @@ export default function SoftwarePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">ソフトウェア開発を始めませんか？</h2>
           <p className="text-xl text-slate-300 mb-8">
-            お客様のビジネス課題を解決する最適なソフトウェアソリューションを提案いたします。
-            まずは無料のMVP開発からお気軽にご相談ください。
+            お客様のビジネス課題を解決する最適なソフトウェアを提案いたします。
+            予約・業務基幹・顧客向けポータルなど、まずはお問い合わせよりご相談ください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#contact">
+            <Link href="/contact">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8">
-                無料MVP開発を申し込む
+                お問い合わせ
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
