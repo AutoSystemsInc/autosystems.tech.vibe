@@ -1,0 +1,46 @@
+.page { background: #111512; color: #f4f4ed; isolation: isolate; position: relative; overflow: clip; }
+.page main { position: relative; }
+.ambient { position: absolute; z-index: -1; top: -70px; left: 0; right: 0; height: 1000px; pointer-events: none; background: radial-gradient(ellipse at 80% 12%, #8dc6510c, transparent 50%), linear-gradient(#afc0a703 1px, transparent 1px), linear-gradient(90deg, #afc0a703 1px, transparent 1px); background-size: auto, 64px 64px, 64px 64px; mask-image: linear-gradient(black, transparent); }
+.container { width: min(1280px, calc(100% - 112px)); margin: auto; }
+.breadcrumb { display: flex; align-items: center; gap: 13px; padding-top: 31px; font-size: 10px; color: #838e84; }
+.breadcrumb a { color: #bec6bd; transition: color .2s; }
+.breadcrumb a:hover { color: var(--lime); }
+.workspace { display: grid; grid-template-columns: .83fr 1.42fr; gap: 68px; align-items: start; padding-top: 51px; padding-bottom: 78px; }
+.intro { min-width: 0; padding-top: 22px; position: sticky; top: 35px; }
+.eyebrow { display: flex; align-items: center; gap: 10px; font: 9px/1.6 'Courier New', monospace; letter-spacing: 1.25px; color: #a8b4a3; margin: 0; }
+.eyebrow > span { display: inline-block; width: 5px; height: 5px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 15px #d2fa6938; }
+.intro h1 { font-size: clamp(36px, 3.8vw, 54px); line-height: 1.5; letter-spacing: -.055em; font-weight: 500; margin: 31px 0 24px; }
+.intro h1 > span { color: var(--lime); }
+.lead { font-size: 17px; line-height: 1.9; font-weight: 500; margin: 0 0 15px; letter-spacing: .01em; }
+.description { font-size: 12px; line-height: 2.05; color: #929f92; margin: 0; }
+.reassurance { display: flex; flex-direction: column; gap: 11px; margin: 27px 0 28px; font-size: 10px; color: #a0ad9c; }
+.reassurance > span { display: inline-flex; align-items: center; gap: 8px; }
+.reassurance svg { color: #d2fa6999; }
+.introFooter { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #b5d1a41a; color: #7c8b77; font: 8px/1.5 'Courier New', monospace; letter-spacing: 1.3px; }
+.composer { min-width: 0; scroll-margin-top: 28px; }
+.followUp { display: grid; grid-template-columns: .83fr 1.42fr; gap: 68px; padding: 41px 0 43px; border-top: 1px solid #a4ba981b; }
+.followHeading h2 { font-size: 23px; font-weight: 400; letter-spacing: -.03em; margin: 16px 0 0; }
+.nextSteps { padding: 0; margin: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
+.nextSteps li { position: relative; padding-top: 2px; }
+.stepNumber { display: block; font: 9px/1.6 'Courier New', monospace; color: #9aaf84; margin-bottom: 19px; }
+.nextSteps h3 { font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+.nextSteps p { font-size: 10px; line-height: 1.9; color: #81907b; margin: 0; }
+.nextSteps svg { position: absolute; top: 0; right: 0; color: #99af81; }
+.faqSection { display: grid; grid-template-columns: .83fr 1.42fr; gap: 68px; padding: 67px 0 94px; border-top: 1px solid #a4ba981b; }
+.faqHeading h2 { font-size: 33px; font-weight: 400; letter-spacing: -.04em; line-height: 1.6; margin: 24px 0 16px; }
+.faqHeading > p:last-of-type { font-size: 11px; color: #8d9d86; margin-bottom: 26px; }
+.faqHeading a { display: inline-flex; align-items: center; gap: 20px; font-size: 10px; color: #c8d8ba; }
+.faqHeading a:hover { color: var(--lime); }
+.questions { align-self: start; border-top: 1px solid #b5d1a426; }
+.question { border-bottom: 1px solid #b5d1a426; }
+.question summary { list-style: none; display: grid; grid-template-columns: 23px 1fr 18px; align-items: center; gap: 15px; cursor: pointer; padding: 28px 0; font-size: 12px; line-height: 1.8; }
+.question summary::-webkit-details-marker { display: none; }
+.question summary > svg { color: #b4cd9b; transition: transform .25s; }
+.question[open] summary > svg { transform: rotate(45deg); color: var(--lime); }
+.questionNumber { color: #6a7c61; font: 9px monospace; }
+.answer p { margin: -4px 30px 27px 38px; color: #9bab92; font-size: 11px; line-height: 2.1; }
+@media (max-width: 1100px) { .container { width: calc(100% - 72px); } .workspace, .followUp, .faqSection { grid-template-columns: .7fr 1.3fr; gap: 35px; } .intro h1 { font-size: 35px; } .lead { font-size: 14px; } .nextSteps { gap: 18px; } }
+@media (max-width: 860px) { .workspace { grid-template-columns: 1fr; gap: 36px; padding-top: 35px; } .intro { position: relative; top: auto; padding-top: 0; } .intro h1 { font-size: 44px; margin: 23px 0 19px; } .lead { font-size: 16px; } .description { font-size: 12px; } .introFooter { display: none; } .reassurance { flex-direction: row; flex-wrap: wrap; gap: 14px 23px; margin: 22px 0 0; } .followUp, .faqSection { grid-template-columns: 1fr; gap: 31px; } .followUp { padding: 34px 0; } .followHeading { display: flex; justify-content: space-between; align-items: center; gap: 20px; } .followHeading h2 { margin: 0; font-size: 21px; } .faqSection { padding: 45px 0 65px; } .faqHeading h2 { font-size: 31px; margin: 20px 0 14px; } }
+@media (max-width: 600px) { .container { width: calc(100% - 36px); } .breadcrumb { padding-top: 25px; font-size: 9px; } .workspace { padding-top: 29px; padding-bottom: 46px; gap: 28px; } .intro h1 { font-size: 39px; } .lead { font-size: 14px; } .description { font-size: 11px; } .reassurance { gap: 11px; flex-direction: column; font-size: 9px; } .followHeading { display: block; } .followHeading h2 { margin-top: 15px; font-size: 22px; } .nextSteps { grid-template-columns: 1fr; gap: 0; } .nextSteps li { display: grid; grid-template-columns: 28px 1fr 17px; gap: 15px; padding: 20px 0; border-bottom: 1px solid #a4ba981b; } .nextSteps li:first-child { padding-top: 0; } .nextSteps li:last-child { border: 0; padding-bottom: 0; } .stepNumber { margin: 0; padding-top: 2px; } .nextSteps h3 { margin-bottom: 7px; } .nextSteps p { font-size: 11px; } .nextSteps svg { position: static; } .question summary { font-size: 11px; gap: 10px; padding: 24px 0; } .answer p { margin-left: 33px; font-size: 11px; } }
+@media (max-width: 360px) { .intro h1 { font-size: 34px; } }
+@media (prefers-reduced-motion: reduce) { .question summary > svg, .breadcrumb a { transition: none; } }

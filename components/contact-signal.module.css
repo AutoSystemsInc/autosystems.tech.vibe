@@ -1,0 +1,18 @@
+.scene { perspective: 800px; margin-top: 28px; max-width: 400px; }
+.surface { --tilt-x: 0deg; --tilt-y: 0deg; --light-x: 60%; --light-y: 30%; position: relative; height: 181px; border: 1px solid #b5d1a420; border-radius: 15px; overflow: hidden; transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); background: radial-gradient(circle at var(--light-x) var(--light-y), #c1ed9a12, transparent 60%), #171e18; transition: transform .4s ease-out; }
+.surface::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(#a0b68c26 .6px, transparent .6px); background-size: 14px 14px; opacity: .7; }
+.surface::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 1px #e4f9d907; pointer-events: none; }
+.caption { position: absolute; top: 17px; left: 18px; color: #7c9271; font: 7px 'Courier New', monospace; letter-spacing: .9px; }
+.connections { width: 100%; height: 100%; position: absolute; inset: 0; stroke: #a9c39238; stroke-width: .8px; }
+.signal { stroke: #d2fa69; stroke-width: 1px; stroke-dasharray: 15 225; animation: travel 6s linear infinite; }
+.idea, .layer { display: flex; align-items: center; gap: 10px; position: absolute; border: 1px solid #b5d1a435; padding: 14px; border-radius: 9px; backdrop-filter: blur(10px); font-size: 10px; box-shadow: 0 10px 26px #040b0650; }
+.idea { top: 58px; left: 20px; color: #b9caaa; background: #253025cc; transform: rotate(-6deg); }
+.idea svg { color: #d2fa69; }
+.layer { right: 61px; bottom: 32px; color: #c3d2b7; background: #283426a8; transform: rotate(4deg); }
+.layer svg { color: #a7c38a; }
+.destination { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; position: absolute; right: 16px; bottom: 35px; background: #d2fa69; color: #192515; box-shadow: 0 0 28px #d2fa6912; }
+.bottomLabel { position: absolute; left: 18px; bottom: 14px; font: 6px 'Courier New', monospace; letter-spacing: .8px; color: #6c805f; }
+@keyframes travel { from { stroke-dashoffset: 240; } to { stroke-dashoffset: 0; } }
+@media (max-width: 1100px) { .surface { height: 165px; } .idea { left: 14px; font-size: 9px; padding: 12px; } .layer { right: 51px; font-size: 9px; padding: 12px; } .destination { right: 11px; width: 33px; height: 33px; } }
+@media (max-width: 860px) { .scene { display: none; } }
+@media (prefers-reduced-motion: reduce) { .surface { transform: none !important; transition: none; } .signal { animation: none; } }

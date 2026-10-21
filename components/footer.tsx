@@ -1,22 +1,23 @@
-import Link from "next/link"
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-700 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h3 className="text-xl font-bold text-amber-400 mb-2">AutoSystems, Inc.</h3>
-          <div className="flex justify-center gap-6 mb-4">
-            <Link href="/about" className="text-slate-400 hover:text-amber-400 transition-colors">
-              私たちについて
-            </Link>
-            <Link href="/contact" className="text-slate-400 hover:text-amber-400 transition-colors">
-              お問い合わせ
-            </Link>
-          </div>
-          <p className="text-slate-400">© 2026 AutoSystems, Inc. All rights reserved.</p>
+    <footer className="site-footer">
+      <div className="site-container">
+        <div className="footer-top">
+          <Link href="/" className="brand" aria-label="AutoSystems, Inc. ホーム">AutoSystems, Inc.</Link>
+          <p>可能性を、動く仕組みに。<br /><span>Engineering a more accessible world.</span></p>
+          <nav aria-label="フッターナビゲーション">
+            <Link href="/services">Services <ArrowUpRight size={15} aria-hidden="true" /></Link>
+            <Link href="/about">About us <ArrowUpRight size={15} aria-hidden="true" /></Link>
+            <Link href="/contact">お問い合わせ <ArrowUpRight size={15} aria-hidden="true" /></Link>
+          </nav>
         </div>
+        <div className="footer-wordmark" aria-hidden="true">AutoSystems, Inc.</div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} AutoSystems, Inc.</span><span><i className="status-dot" /> Built for what’s next.</span><a href="#main-content">Back to top ↑</a></div>
       </div>
     </footer>
   )
-} 
+}
+

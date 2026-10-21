@@ -1,0 +1,503 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\night-office.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    creation_time   : 2021-04-27T08:49:07.000000Z
+  Duration: 00:00:23.04, start: 0.000000, bitrate: 11815 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 3840x2160, 11557 kb/s, 25 fps, 25 tbr, 25 tbn (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 253 kb/s (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Audio Handler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001511c95c180] using SAR=1/1
+[libx264 @ 000001511c95c180] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001511c95c180] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001511c95c180] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-0.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    1 fps=0.5 q=23.0 size=       0KiB time=-00:00:00.04 bitrate=N/A speed=N/A    
+frame=   17 fps=6.6 q=23.0 size=     256KiB time=00:00:00.60 bitrate=3495.9kbits/s speed=0.233x    
+frame=   32 fps= 10 q=23.0 size=     512KiB time=00:00:01.20 bitrate=3495.6kbits/s speed=0.388x    
+frame=   44 fps= 12 q=23.0 size=     768KiB time=00:00:01.68 bitrate=3745.1kbits/s speed=0.466x    
+frame=   57 fps= 14 q=23.0 size=     768KiB time=00:00:02.20 bitrate=2859.9kbits/s speed=0.534x    
+frame=   69 fps= 15 q=23.0 size=    1024KiB time=00:00:02.68 bitrate=3130.2kbits/s speed=0.578x    
+frame=   82 fps= 16 q=23.0 size=    1280KiB time=00:00:03.20 bitrate=3276.9kbits/s speed=0.621x    
+frame=   97 fps= 17 q=23.0 size=    1536KiB time=00:00:03.80 bitrate=3311.4kbits/s speed=0.67x    
+frame=  117 fps= 19 q=23.0 size=    1792KiB time=00:00:04.60 bitrate=3191.4kbits/s speed=0.744x    
+[out#0/mp4 @ 000001511c94fb00] video:2049KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.116290%
+frame=  125 fps= 20 q=-1.0 Lsize=    2051KiB time=00:00:04.92 bitrate=3415.7kbits/s speed=0.774x    
+[libx264 @ 000001511c95c180] frame I:1     Avg QP:16.03  size:111449
+[libx264 @ 000001511c95c180] frame P:31    Avg QP:16.14  size: 31699
+[libx264 @ 000001511c95c180] frame B:93    Avg QP:17.62  size: 10789
+[libx264 @ 000001511c95c180] consecutive B-frames:  0.8%  0.0%  0.0% 99.2%
+[libx264 @ 000001511c95c180] mb I  I16..4: 21.0% 45.4% 33.6%
+[libx264 @ 000001511c95c180] mb P  I16..4:  1.3%  1.4%  0.3%  P16..4: 38.0% 18.9% 11.6%  0.0%  0.0%    skip:28.5%
+[libx264 @ 000001511c95c180] mb B  I16..4:  3.4%  3.3%  0.0%  B16..8: 25.0%  6.9%  0.1%  direct:11.0%  skip:50.2%  L0:54.1% L1:40.3% BI: 5.6%
+[libx264 @ 000001511c95c180] 8x8 transform intra:48.4% inter:60.3%
+[libx264 @ 000001511c95c180] coded y,uvDC,uvAC intra: 41.6% 38.5% 15.0% inter: 12.0% 14.0% 0.2%
+[libx264 @ 000001511c95c180] i16 v,h,dc,p: 63% 16% 15%  6%
+[libx264 @ 000001511c95c180] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 12% 62%  1%  1%  1%  1%  1%  1%
+[libx264 @ 000001511c95c180] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 42% 20% 21%  3%  3%  3%  3%  3%  2%
+[libx264 @ 000001511c95c180] i8c dc,h,v,p: 70% 11% 18%  1%
+[libx264 @ 000001511c95c180] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 000001511c95c180] ref P L0: 54.6% 45.4%
+[libx264 @ 000001511c95c180] ref B L0: 65.2% 34.8%
+[libx264 @ 000001511c95c180] ref B L1: 88.7% 11.3%
+[libx264 @ 000001511c95c180] kb/s:3356.03
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\city-view.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    creation_time   : 2021-07-01T14:58:55.000000Z
+  Duration: 00:00:27.72, start: 0.000000, bitrate: 7016 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2732x1440, 7013 kb/s, 25 fps, 25 tbr, 25 tbn (default)
+      Metadata:
+        creation_time   : 2021-07-01T14:58:55.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 00000244f72e5040] using SAR=1/1
+[libx264 @ 00000244f72e5040] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 00000244f72e5040] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 00000244f72e5040] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-1.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn (default)
+      Metadata:
+        creation_time   : 2021-07-01T14:58:55.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    9 fps=4.4 q=23.0 size=     256KiB time=00:00:00.28 bitrate=7491.2kbits/s speed=0.135x    
+frame=   25 fps=9.7 q=23.0 size=     512KiB time=00:00:00.92 bitrate=4559.4kbits/s speed=0.357x    
+frame=   39 fps= 13 q=23.0 size=     768KiB time=00:00:01.48 bitrate=4251.2kbits/s speed=0.479x    
+frame=   52 fps= 14 q=23.0 size=    1024KiB time=00:00:02.00 bitrate=4194.5kbits/s speed=0.555x    
+frame=   69 fps= 17 q=23.0 size=    1280KiB time=00:00:02.68 bitrate=3912.7kbits/s speed=0.65x    
+frame=   85 fps= 18 q=23.0 size=    1536KiB time=00:00:03.32 bitrate=3790.1kbits/s speed=0.717x    
+[out#0/mp4 @ 00000244f6bf8a80] video:1795KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.109003%
+frame=   90 fps= 19 q=-1.0 Lsize=    1797KiB time=00:00:03.52 bitrate=4182.9kbits/s speed=0.746x    
+[libx264 @ 00000244f72e5040] frame I:1     Avg QP:16.20  size:248790
+[libx264 @ 00000244f72e5040] frame P:23    Avg QP:16.65  size: 49158
+[libx264 @ 00000244f72e5040] frame B:66    Avg QP:20.22  size:  6945
+[libx264 @ 00000244f72e5040] consecutive B-frames:  2.2%  0.0%  0.0% 97.8%
+[libx264 @ 00000244f72e5040] mb I  I16..4: 10.7% 61.8% 27.5%
+[libx264 @ 00000244f72e5040] mb P  I16..4:  0.6%  0.3%  0.1%  P16..4: 43.5% 23.1% 15.7%  0.0%  0.0%    skip:16.7%
+[libx264 @ 00000244f72e5040] mb B  I16..4:  0.8%  0.8%  0.0%  B16..8: 23.8%  5.9%  0.1%  direct: 7.6%  skip:60.9%  L0:45.3% L1:48.7% BI: 6.0%
+[libx264 @ 00000244f72e5040] 8x8 transform intra:52.9% inter:63.1%
+[libx264 @ 00000244f72e5040] coded y,uvDC,uvAC intra: 50.4% 45.5% 21.8% inter: 15.2% 9.7% 0.2%
+[libx264 @ 00000244f72e5040] i16 v,h,dc,p: 24% 19% 15% 42%
+[libx264 @ 00000244f72e5040] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 18% 29%  4%  4%  4%  5%  4%  7%
+[libx264 @ 00000244f72e5040] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 33% 20% 10%  4%  6%  5%  8%  4%  9%
+[libx264 @ 00000244f72e5040] i8c dc,h,v,p: 63% 19% 14%  3%
+[libx264 @ 00000244f72e5040] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 00000244f72e5040] ref P L0: 72.1% 27.9%
+[libx264 @ 00000244f72e5040] ref B L0: 77.0% 23.0%
+[libx264 @ 00000244f72e5040] ref B L1: 92.1%  7.9%
+[libx264 @ 00000244f72e5040] kb/s:4084.00
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\glass-office.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    creation_time   : 2020-09-30T10:57:32.000000Z
+  Duration: 00:00:22.20, start: 0.000000, bitrate: 12041 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 4096x2160, 12038 kb/s, 25 fps, 25 tbr, 25 tbn (default)
+      Metadata:
+        creation_time   : 2020-09-30T10:57:32.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0000023486520980] using SAR=1/1
+[libx264 @ 0000023486520980] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000023486520980] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0000023486520980] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-2.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn (default)
+      Metadata:
+        creation_time   : 2020-09-30T10:57:32.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    1 fps=0.5 q=23.0 size=       0KiB time=-00:00:00.04 bitrate=N/A speed=N/A    
+frame=   17 fps=6.6 q=23.0 size=     256KiB time=00:00:00.60 bitrate=3495.9kbits/s speed=0.234x    
+frame=   30 fps=9.7 q=23.0 size=     256KiB time=00:00:01.12 bitrate=1872.8kbits/s speed=0.363x    
+frame=   42 fps= 12 q=23.0 size=     512KiB time=00:00:01.60 bitrate=2621.7kbits/s speed=0.445x    
+frame=   54 fps= 13 q=23.0 size=     768KiB time=00:00:02.08 bitrate=3024.9kbits/s speed=0.505x    
+frame=   66 fps= 14 q=23.0 size=     768KiB time=00:00:02.56 bitrate=2457.8kbits/s speed=0.553x    
+frame=   78 fps= 15 q=23.0 size=    1024KiB time=00:00:03.04 bitrate=2759.5kbits/s speed=0.591x    
+frame=   97 fps= 17 q=23.0 size=    1280KiB time=00:00:03.80 bitrate=2759.5kbits/s speed=0.671x    
+[out#0/mp4 @ 00000234845b9740] video:1601KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.140552%
+frame=  115 fps= 19 q=-1.0 Lsize=    1603KiB time=00:00:04.52 bitrate=2905.4kbits/s speed=0.732x    
+[libx264 @ 0000023486520980] frame I:1     Avg QP:16.31  size: 65616
+[libx264 @ 0000023486520980] frame P:29    Avg QP:16.17  size: 22789
+[libx264 @ 0000023486520980] frame B:85    Avg QP:17.84  size: 10730
+[libx264 @ 0000023486520980] consecutive B-frames:  0.9%  1.7%  0.0% 97.4%
+[libx264 @ 0000023486520980] mb I  I16..4: 18.9% 57.9% 23.2%
+[libx264 @ 0000023486520980] mb P  I16..4:  0.8%  1.2%  0.3%  P16..4: 42.2% 19.9% 10.6%  0.0%  0.0%    skip:24.9%
+[libx264 @ 0000023486520980] mb B  I16..4:  3.0%  2.4%  0.0%  B16..8: 23.5%  5.7%  0.1%  direct:14.4%  skip:51.0%  L0:54.9% L1:41.5% BI: 3.6%
+[libx264 @ 0000023486520980] 8x8 transform intra:47.1% inter:65.5%
+[libx264 @ 0000023486520980] coded y,uvDC,uvAC intra: 35.9% 49.8% 12.9% inter: 10.4% 20.0% 0.1%
+[libx264 @ 0000023486520980] i16 v,h,dc,p: 33% 20% 27% 20%
+[libx264 @ 0000023486520980] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 16% 42%  2%  3%  3%  4%  3%  3%
+[libx264 @ 0000023486520980] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 45% 20% 15%  3%  4%  4%  4%  3%  2%
+[libx264 @ 0000023486520980] i8c dc,h,v,p: 68% 14% 16%  2%
+[libx264 @ 0000023486520980] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0000023486520980] ref P L0: 50.7% 49.3%
+[libx264 @ 0000023486520980] ref B L0: 61.7% 38.3%
+[libx264 @ 0000023486520980] ref B L1: 90.1%  9.9%
+[libx264 @ 0000023486520980] kb/s:2849.68
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\typing.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    creation_time   : 2019-11-09T19:04:19.000000Z
+  Duration: 00:00:15.16, start: 0.000000, bitrate: 2903 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 2900 kb/s, 25 fps, 25 tbr, 25 tbn (default)
+      Metadata:
+        creation_time   : 2019-11-09T19:04:19.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001671774eb00] using SAR=1/1
+[libx264 @ 000001671774eb00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001671774eb00] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001671774eb00] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-3.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn (default)
+      Metadata:
+        creation_time   : 2019-11-09T19:04:19.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    9 fps=4.4 q=23.0 size=       0KiB time=00:00:00.28 bitrate=   1.4kbits/s speed=0.136x    
+frame=   21 fps=8.1 q=23.0 size=     256KiB time=00:00:00.76 bitrate=2759.9kbits/s speed=0.294x    
+frame=   35 fps= 11 q=23.0 size=     512KiB time=00:00:01.32 bitrate=3177.8kbits/s speed=0.427x    
+frame=   49 fps= 14 q=23.0 size=     768KiB time=00:00:01.88 bitrate=3346.7kbits/s speed=0.521x    
+frame=   62 fps= 15 q=23.0 size=    1024KiB time=00:00:02.40 bitrate=3495.4kbits/s speed=0.583x    
+frame=   77 fps= 17 q=23.0 size=    1280KiB time=00:00:03.00 bitrate=3495.4kbits/s speed=0.647x    
+[out#0/mp4 @ 0000016717699b40] video:1776KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.110177%
+frame=   90 fps= 18 q=-1.0 Lsize=    1778KiB time=00:00:03.52 bitrate=4138.4kbits/s speed=0.697x    
+[libx264 @ 000001671774eb00] frame I:1     Avg QP:18.14  size: 54434
+[libx264 @ 000001671774eb00] frame P:23    Avg QP:17.55  size: 41942
+[libx264 @ 000001671774eb00] frame B:66    Avg QP:19.01  size: 12108
+[libx264 @ 000001671774eb00] consecutive B-frames:  2.2%  0.0%  0.0% 97.8%
+[libx264 @ 000001671774eb00] mb I  I16..4: 24.5% 61.9% 13.6%
+[libx264 @ 000001671774eb00] mb P  I16..4:  3.1%  5.7%  0.8%  P16..4: 47.2% 23.2%  8.5%  0.0%  0.0%    skip:11.4%
+[libx264 @ 000001671774eb00] mb B  I16..4:  2.4%  4.2%  0.0%  B16..8: 30.5%  6.0%  0.1%  direct:14.3%  skip:42.5%  L0:48.5% L1:45.5% BI: 6.1%
+[libx264 @ 000001671774eb00] 8x8 transform intra:61.6% inter:72.5%
+[libx264 @ 000001671774eb00] coded y,uvDC,uvAC intra: 46.8% 37.1% 1.6% inter: 15.0% 16.5% 0.0%
+[libx264 @ 000001671774eb00] i16 v,h,dc,p: 18% 19% 10% 53%
+[libx264 @ 000001671774eb00] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 25% 22%  7%  6%  6%  7%  7%  5%
+[libx264 @ 000001671774eb00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 26% 13%  5%  7% 10%  6%  4%  3%
+[libx264 @ 000001671774eb00] i8c dc,h,v,p: 65% 18% 14%  2%
+[libx264 @ 000001671774eb00] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 000001671774eb00] ref P L0: 62.8% 37.2%
+[libx264 @ 000001671774eb00] ref B L0: 78.6% 21.4%
+[libx264 @ 000001671774eb00] ref B L1: 93.0%  7.0%
+[libx264 @ 000001671774eb00] kb/s:4040.45
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\night-office.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    creation_time   : 2021-04-27T08:49:07.000000Z
+  Duration: 00:00:23.04, start: 0.000000, bitrate: 11815 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 3840x2160, 11557 kb/s, 25 fps, 25 tbr, 25 tbn (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 253 kb/s (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Audio Handler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001e8cf18c180] using SAR=1/1
+[libx264 @ 000001e8cf18c180] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001e8cf18c180] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001e8cf18c180] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-4.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42mp41isomavc1
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn (default)
+      Metadata:
+        creation_time   : 2021-04-27T08:49:07.000000Z
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=   19 fps=9.2 q=23.0 size=     256KiB time=00:00:00.68 bitrate=3084.6kbits/s speed=0.33x    
+[out#0/mp4 @ 000001e8cf17fb00] video:461KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.256020%
+frame=   25 fps= 12 q=-1.0 Lsize=     462KiB time=00:00:00.92 bitrate=4113.4kbits/s speed=0.429x    
+[libx264 @ 000001e8cf18c180] frame I:1     Avg QP:16.07  size:111097
+[libx264 @ 000001e8cf18c180] frame P:6     Avg QP:16.71  size: 25622
+[libx264 @ 000001e8cf18c180] frame B:18    Avg QP:17.45  size: 11462
+[libx264 @ 000001e8cf18c180] consecutive B-frames:  4.0%  0.0%  0.0% 96.0%
+[libx264 @ 000001e8cf18c180] mb I  I16..4: 20.0% 44.0% 36.0%
+[libx264 @ 000001e8cf18c180] mb P  I16..4:  1.5%  1.6%  0.5%  P16..4: 36.8% 15.8% 10.7%  0.0%  0.0%    skip:33.1%
+[libx264 @ 000001e8cf18c180] mb B  I16..4:  3.7%  3.6%  0.0%  B16..8: 24.1%  7.0%  0.2%  direct:11.7%  skip:49.7%  L0:55.8% L1:39.0% BI: 5.2%
+[libx264 @ 000001e8cf18c180] 8x8 transform intra:46.9% inter:61.5%
+[libx264 @ 000001e8cf18c180] coded y,uvDC,uvAC intra: 46.3% 45.1% 21.5% inter: 10.7% 14.6% 0.1%
+[libx264 @ 000001e8cf18c180] i16 v,h,dc,p: 62% 16% 15%  7%
+[libx264 @ 000001e8cf18c180] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 14% 49%  2%  2%  2%  2%  2%  2%
+[libx264 @ 000001e8cf18c180] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 45% 21% 14%  3%  4%  4%  4%  3%  3%
+[libx264 @ 000001e8cf18c180] i8c dc,h,v,p: 66% 13% 19%  1%
+[libx264 @ 000001e8cf18c180] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 000001e8cf18c180] ref P L0: 60.1% 39.9%
+[libx264 @ 000001e8cf18c180] ref B L0: 69.8% 30.2%
+[libx264 @ 000001e8cf18c180] ref B L1: 88.5% 11.5%
+[libx264 @ 000001e8cf18c180] kb/s:3769.19
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-0.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:05.00, start: 0.000000, bitrate: 3361 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 3357 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-1.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:03.60, start: 0.000000, bitrate: 4089 kb/s
+  Stream #1:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 4085 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-2.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:04.60, start: 0.000000, bitrate: 2854 kb/s
+  Stream #2:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2850 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Input #3, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-3.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:03.60, start: 0.000000, bitrate: 4046 kb/s
+  Stream #3:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 4041 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Input #4, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\tmp\office-film\shot-4.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:01.00, start: 0.000000, bitrate: 3784 kb/s
+  Stream #4:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 3774 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : L-SMASH Video Handler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Stream mapping:
+  Stream #0:0 (h264) -> xfade
+  Stream #1:0 (h264) -> xfade
+  Stream #2:0 (h264) -> xfade
+  Stream #3:0 (h264) -> xfade
+  Stream #4:0 (h264) -> xfade
+  xfade:default -> Stream #0:0 (libx264)
+Press [q] to stop, [?] for help
+[libx264 @ 000002958ac312c0] using SAR=1/1
+[libx264 @ 000002958ac312c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002958ac312c0] profile High, level 5.0, 4:2:0, 8-bit
+[libx264 @ 000002958ac312c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=5 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=8 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=2 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=3 weightb=1 open_gop=0 weightp=2 keyint=50 keyint_min=5 scenecut=40 intra_refresh=0 rc_lookahead=50 rc=crf mbtree=1 crf=22.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=5000 vbv_bufsize=10000 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\public\media\autosystems-office-opening.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    title           : AutoSystems | Urban Work
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 5000000/0/0 buffer size: 10000000 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    
+frame=   21 fps= 14 q=27.0 size=       0KiB time=00:00:00.76 bitrate=   0.5kbits/s speed=0.491x    
+frame=   34 fps= 17 q=27.0 size=     256KiB time=00:00:01.28 bitrate=1638.7kbits/s speed=0.622x    
+frame=   57 fps= 22 q=27.0 size=     512KiB time=00:00:02.20 bitrate=1906.7kbits/s speed=0.856x    
+frame=   73 fps= 24 q=27.0 size=     512KiB time=00:00:02.84 bitrate=1477.0kbits/s speed=0.92x    
+frame=   85 fps= 24 q=27.0 size=     768KiB time=00:00:03.32 bitrate=1895.1kbits/s speed=0.921x    
+frame=  100 fps= 24 q=27.0 size=     768KiB time=00:00:03.92 bitrate=1605.1kbits/s speed=0.95x    
+frame=  113 fps= 24 q=27.0 size=    1024KiB time=00:00:04.44 bitrate=1889.4kbits/s speed=0.957x    
+frame=  119 fps= 23 q=27.0 size=    1024KiB time=00:00:04.68 bitrate=1792.5kbits/s speed=0.909x    
+frame=  122 fps= 22 q=27.0 size=    1280KiB time=00:00:04.80 bitrate=2184.6kbits/s speed=0.846x    
+frame=  133 fps= 21 q=27.0 size=    1280KiB time=00:00:05.24 bitrate=2001.2kbits/s speed=0.847x    
+frame=  141 fps= 21 q=27.0 size=    1536KiB time=00:00:05.56 bitrate=2263.2kbits/s speed=0.829x    
+frame=  146 fps= 20 q=27.0 size=    1536KiB time=00:00:05.76 bitrate=2184.6kbits/s speed=0.798x    
+frame=  155 fps= 20 q=27.0 size=    1792KiB time=00:00:06.12 bitrate=2398.8kbits/s speed=0.791x    
+frame=  167 fps= 20 q=27.0 size=    1792KiB time=00:00:06.60 bitrate=2224.3kbits/s speed=0.801x    
+frame=  179 fps= 20 q=27.0 size=    2048KiB time=00:00:07.08 bitrate=2369.7kbits/s speed=0.809x    
+frame=  191 fps= 21 q=27.0 size=    2048KiB time=00:00:07.56 bitrate=2219.3kbits/s speed=0.815x    
+frame=  195 fps= 20 q=27.0 size=    2048KiB time=00:00:07.72 bitrate=2173.3kbits/s speed=0.789x    
+frame=  206 fps= 20 q=27.0 size=    2304KiB time=00:00:08.16 bitrate=2313.1kbits/s speed=0.792x    
+frame=  218 fps= 20 q=27.0 size=    2560KiB time=00:00:08.64 bitrate=2427.3kbits/s speed=0.799x    
+frame=  230 fps= 20 q=27.0 size=    2560KiB time=00:00:09.12 bitrate=2299.6kbits/s speed=0.804x    
+frame=  240 fps= 20 q=27.0 size=    2560KiB time=00:00:09.52 bitrate=2202.9kbits/s speed=0.803x    
+frame=  256 fps= 21 q=27.0 size=    2816KiB time=00:00:10.16 bitrate=2270.6kbits/s speed=0.821x    
+frame=  269 fps= 21 q=27.0 size=    2816KiB time=00:00:10.68 bitrate=2160.0kbits/s speed=0.829x    
+frame=  284 fps= 21 q=27.0 size=    3072KiB time=00:00:11.28 bitrate=2231.0kbits/s speed=0.842x    
+frame=  294 fps= 21 q=27.0 size=    3072KiB time=00:00:11.68 bitrate=2154.6kbits/s speed=0.839x    
+frame=  303 fps= 21 q=27.0 size=    3072KiB time=00:00:12.04 bitrate=2090.2kbits/s speed=0.834x    
+frame=  313 fps= 21 q=27.0 size=    3328KiB time=00:00:12.44 bitrate=2191.6kbits/s speed=0.832x    
+frame=  324 fps= 21 q=27.0 size=    3328KiB time=00:00:12.88 bitrate=2116.7kbits/s speed=0.833x    
+frame=  332 fps= 21 q=27.0 size=    3584KiB time=00:00:13.20 bitrate=2224.3kbits/s speed=0.826x    
+frame=  340 fps= 21 q=27.0 size=    3584KiB time=00:00:13.52 bitrate=2171.6kbits/s speed=0.82x    
+frame=  345 fps= 20 q=27.0 size=    3584KiB time=00:00:13.72 bitrate=2140.0kbits/s speed=0.806x    
+frame=  356 fps= 20 q=27.0 size=    3840KiB time=00:00:14.16 bitrate=2221.6kbits/s speed=0.808x    
+frame=  368 fps= 20 q=27.0 size=    3840KiB time=00:00:14.64 bitrate=2148.7kbits/s speed=0.811x    
+frame=  376 fps= 20 q=27.0 size=    3840KiB time=00:00:14.96 bitrate=2102.8kbits/s speed=0.806x    
+frame=  380 fps= 20 q=27.0 size=    4096KiB time=00:00:15.12 bitrate=2219.2kbits/s speed=0.793x    
+frame=  386 fps= 20 q=27.0 size=    4096KiB time=00:00:15.36 bitrate=2184.6kbits/s speed=0.784x    
+[mp4 @ 000002958b058b00] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002958b4a1c00] video:4449KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.125978%
+frame=  400 fps= 20 q=-1.0 Lsize=    4454KiB time=00:00:15.92 bitrate=2292.1kbits/s speed=0.796x    
+[libx264 @ 000002958ac312c0] frame I:9     Avg QP:17.30  size: 95005
+[libx264 @ 000002958ac312c0] frame P:106   Avg QP:19.31  size: 23332
+[libx264 @ 000002958ac312c0] frame B:285   Avg QP:20.05  size:  4304
+[libx264 @ 000002958ac312c0] consecutive B-frames:  3.5%  2.5%  6.0% 88.0%
+[libx264 @ 000002958ac312c0] mb I  I16..4: 18.8% 69.9% 11.2%
+[libx264 @ 000002958ac312c0] mb P  I16..4:  6.1%  9.8%  0.5%  P16..4: 37.7%  8.7%  5.2%  0.0%  0.0%    skip:32.1%
+[libx264 @ 000002958ac312c0] mb B  I16..4:  0.7%  0.7%  0.0%  B16..8: 28.9%  1.0%  0.1%  direct: 3.4%  skip:65.2%  L0:45.9% L1:51.2% BI: 2.9%
+[libx264 @ 000002958ac312c0] 8x8 transform intra:61.6% inter:74.2%
+[libx264 @ 000002958ac312c0] direct mvs  spatial:98.9% temporal:1.1%
+[libx264 @ 000002958ac312c0] coded y,uvDC,uvAC intra: 36.7% 36.3% 6.2% inter: 3.9% 10.1% 0.0%
+[libx264 @ 000002958ac312c0] i16 v,h,dc,p: 38% 20% 11% 32%
+[libx264 @ 000002958ac312c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 13% 25%  6%  6%  7%  8%  7%  8%
+[libx264 @ 000002958ac312c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 17%  7%  7%  9%  9% 10%  7%  9%
+[libx264 @ 000002958ac312c0] i8c dc,h,v,p: 61% 22% 15%  2%
+[libx264 @ 000002958ac312c0] Weighted P-Frames: Y:10.4% UV:10.4%
+[libx264 @ 000002958ac312c0] ref P L0: 61.1%  9.4% 18.9%  5.6%  4.7%  0.2%  0.0%
+[libx264 @ 000002958ac312c0] ref B L0: 75.8% 16.9%  5.8%  1.5%
+[libx264 @ 000002958ac312c0] ref B L1: 94.6%  5.4%
+[libx264 @ 000002958ac312c0] kb/s:2277.40
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\public\media\autosystems-office-opening.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    title           : AutoSystems | Urban Work
+    encoder         : Lavf61.7.100
+  Duration: 00:00:16.00, start: 0.000000, bitrate: 2280 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2277 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\public\media\autosystems-office-poster.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    title           : AutoSystems | Urban Work
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[image2 @ 000002597e6b8d00] The specified filename 'C:\Users\aikot\Documents\program_local\autosystems.tech.vibe\public\media\autosystems-office-poster.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000002597e6b8d00] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000002597e6afb80] video:130KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.492x    

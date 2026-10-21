@@ -1,127 +1,89 @@
-import Link from "next/link"
+'use client'
 
-interface HeaderProps {
-  activeSection?:
-    | "products"
-    | "problems"
-    | "solution"
-    | "proof"
-    | "model"
-    | "process"
-    | "testimonials"
-    | "faq"
-    | "contact"
-    | "about"
-    | "services"
-}
+import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
+
+interface HeaderProps { activeSection?: string }
+
+const navigation = [
+  { href: '/services', label: 'Services', japanese: '事業・サービス', section: 'services' },
+  { href: '/about', label: 'About us', japanese: '私たちについて', section: 'about' },
+]
 
 export default function Header({ activeSection }: HeaderProps) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const menuButton = useRef<HTMLButtonElement>(null)
+  const mobileNavigation = useRef<HTMLElement>(null)
+
+  useEffect(() => { setMenuOpen(false) }, [pathname])
+
+  useEffect(() => {
+    const breakpoint = window.matchMedia('(max-width: 760px)')
+    const closeOnDesktop = () => { if (!breakpoint.matches) setMenuOpen(false) }
+    breakpoint.addEventListener('change', closeOnDesktop)
+    return () => breakpoint.removeEventListener('change', closeOnDesktop)
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButton.current?.focus()
+      }
+      if (event.key === 'Tab') {
+        const links = mobileNavigation.current?.querySelectorAll<HTMLAnchorElement>('a')
+        const first = menuButton.current
+        const last = links?.[links.length - 1]
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last?.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first?.focus()
+        }
+      }
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              <img src="/logo.png" alt="AutoSystems, Inc." className="h-8 w-auto mr-3" />
-              <h1 className="text-xl font-bold text-amber-400">AutoSystems, Inc.</h1>
+    <header className="site-header">
+      <a href="#main-content" className="skip-link">本文へスキップ</a>
+      <div className="header-inner">
+        <Link href="/" className="brand" aria-label="AutoSystems, Inc. ホーム">
+          <span className="brand-mark" aria-hidden="true"><img src="/brand-symbol.png" alt="" width="44" height="44" /></span>
+          <span>AutoSystems, Inc.</span>
+        </Link>
+        <nav className="desktop-nav" aria-label="メインナビゲーション">
+          {navigation.map((item) => (
+            <Link key={item.href} href={item.href} aria-current={activeSection === item.section ? 'page' : undefined}>
+              {item.label}<span>{item.japanese}</span>
             </Link>
-          </div>
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-6">
-              <Link
-                href="/#products"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "products"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                自社サービス
-              </Link>
-              <Link
-                href="/#problems"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "problems"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                課題
-              </Link>
-              <Link
-                href="/#solution"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "solution"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                解決
-              </Link>
-              <Link
-                href="/#proof"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "proof"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                実績
-              </Link>
-              <Link
-                href="/#model"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "model"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                進め方
-              </Link>
-              <Link
-                href="/#process"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "process"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                流れ
-              </Link>
-              <Link
-                href="/#faq"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "faq"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                FAQ
-              </Link>
-              <Link
-                href="/about"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "about"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                私たちについて
-              </Link>
-              <Link
-                href="/#contact"
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === "contact"
-                    ? "text-amber-400"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                お問い合わせ
-              </Link>
-            </div>
-          </div>
-        </div>
+          ))}
+          <Link href="/contact" className="header-contact" aria-current={activeSection === 'contact' ? 'page' : undefined}>
+            お問い合わせ <span className="header-contact-arrow" aria-hidden="true"><ArrowUpRight size={17} /></span>
+          </Link>
+        </nav>
+        <button ref={menuButton} type="button" className="menu-toggle" aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'} onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-    </nav>
+      <nav ref={mobileNavigation} id="mobile-navigation" className="mobile-nav" aria-label="モバイルナビゲーション" hidden={!menuOpen}>
+        {navigation.map((item, index) => (
+          <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} aria-current={activeSection === item.section ? 'page' : undefined}>
+            <span className="mobile-nav-number">0{index + 1}</span><span>{item.label}<small>{item.japanese}</small></span><ArrowUpRight size={26} aria-hidden="true" />
+          </Link>
+        ))}
+        <Link href="/contact" className="mobile-contact" onClick={() => setMenuOpen(false)} aria-current={activeSection === 'contact' ? 'page' : undefined}>
+          <span className="mobile-nav-number">03</span><span>お問い合わせ<small>Contact us</small></span><ArrowUpRight size={26} aria-hidden="true" />
+        </Link>
+      </nav>
+    </header>
   )
-} 
+}
+

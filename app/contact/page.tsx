@@ -1,83 +1,59 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react"
-import Link from "next/link"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import ContactForm from "@/components/contact-form"
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowUpRight, Check, Plus, Sparkles } from 'lucide-react'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import ContactForm from '@/components/contact-form'
+import ContactSignal from '@/components/contact-signal'
+import styles from './contact.module.css'
+
+export const metadata: Metadata = {
+  title: 'お問い合わせ',
+  description: 'システム開発、業務の自動化、IoT、新しいプロジェクトのご相談。AutoSystemsと、次の可能性を一緒につくりませんか。',
+}
+
+const questions = [
+  { question: 'まだアイデアの段階でも相談できますか？', answer: 'もちろんです。仕様がまとまっていなくても、いま感じている課題や、実現してみたいことをお聞かせください。課題の整理から一緒に考えます。' },
+  { question: '予算や時期はまだ決まっていません。', answer: '予算の選択は任意です。「未定」を選ぶこともできます。ご希望の時期も、いま分かる範囲でメッセージに添えていただければ大丈夫です。' },
+  { question: '既存システムの改善や連携も相談できますか？', answer: 'はい。新規開発のほか、既存システムの改善、業務の自動化、API・IoT連携についてもご相談いただけます。現在の運用や、お困りの点をお聞かせください。' },
+]
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className={styles.page}>
       <Header activeSection="contact" />
-
-      {/* Hero Section */}
-      <section className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center mb-8">
-            <Link href="/">
-              <Button variant="ghost" className="text-slate-300 hover:text-white mr-4">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                戻る
-              </Button>
-            </Link>
-          </div>
-
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="border-amber-400 text-amber-400 bg-amber-400/10 mb-6">
-              Contact Us
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">お問い合わせ</h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              プロジェクトのご相談、サービスに関するご質問など、
-              お気軽にお問い合わせください。専門スタッフが丁寧にご対応いたします。
-            </p>
-          </div>
+      <main id="main-content">
+        <div className={styles.ambient} aria-hidden="true" />
+        <div className={styles.container}>
+          <nav className={styles.breadcrumb} aria-label="パンくずリスト"><Link href="/">Home</Link><span>/</span><span>お問い合わせ</span></nav>
+          <section className={styles.workspace} aria-labelledby="contact-title">
+            <div className={styles.intro}>
+              <p className={styles.eyebrow}><span /> CONTACT / お問い合わせ</p>
+              <h1 id="contact-title">次の可能性を、<br /><span>ここから。</span></h1>
+              <p className={styles.lead}>「こんなこと、できる？」が、<br />新しいプロジェクトのはじまり。</p>
+              <p className={styles.description}>システム開発も、業務の自動化も。<br />まだ輪郭のないアイデアから、<br />あなたの次の一歩を一緒につくります。</p>
+              <ContactSignal />
+              <div className={styles.reassurance}><span><Check size={14} aria-hidden="true" />構想段階からご相談いただけます</span><span><Check size={14} aria-hidden="true" />予算や仕様が未定でも大丈夫です</span></div>
+              <div className={styles.introFooter}><span>LET’S MAKE IT WORK.</span><ArrowUpRight size={22} strokeWidth={1.3} aria-hidden="true" /></div>
+            </div>
+            <div id="contact-form-area" className={styles.composer}>
+              <ContactForm />
+            </div>
+          </section>
+          <section className={styles.followUp} aria-labelledby="follow-up-title">
+            <div className={styles.followHeading}><p className={styles.eyebrow}><Sparkles size={12} aria-hidden="true" /> AFTER YOUR MESSAGE</p><h2 id="follow-up-title">送信した、その先へ。</h2></div>
+            <ol className={styles.nextSteps}>{[
+              ['01', '内容を確認', 'お寄せいただいた課題やアイデアを、担当者が確認します。'],
+              ['02', '対話で深める', '背景や目指す姿について、お話を伺います。'],
+              ['03', '一緒に考える', 'ご希望に合う進め方と、実現への一歩を考えます。'],
+            ].map(([number, title, text]) => <li key={number}><span className={styles.stepNumber}>{number}</span><div><h3>{title}</h3><p>{text}</p></div><ArrowUpRight size={17} aria-hidden="true" /></li>)}</ol>
+          </section>
+          <section className={styles.faqSection} aria-labelledby="faq-title">
+            <div className={styles.faqHeading}><p className={styles.eyebrow}>BEFORE WE START</p><h2 id="faq-title">気になること、<br />ありませんか。</h2><p>はじめの一歩を、少し気軽に。</p><Link href="/services">サービスについて知る <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+            <div className={styles.questions}>{questions.map(({ question, answer }, index) => <details className={styles.question} key={question}><summary><span className={styles.questionNumber}>0{index + 1}</span><span>{question}</span><Plus size={18} strokeWidth={1.5} aria-hidden="true" /></summary><div className={styles.answer}><p>{answer}</p></div></details>)}</div>
+          </section>
         </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
-
-      {/* Office Locations 
-      <section className="py-16 bg-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">オフィス所在地</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto"></div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "東京本社",
-                address: "〒101-0021\n東京都千代田区外神田2-10-6\n宮本ビル3-A",
-                access: "JR秋葉原駅 徒歩10分",
-              },
-            ].map((office, index) => (
-              <Card key={index} className="bg-slate-700/50 border-slate-600">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">{office.name}</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-slate-300 whitespace-pre-line">{office.address}</p>
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-sm">{office.access}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>*/}
-
+      </main>
       <Footer />
     </div>
   )
