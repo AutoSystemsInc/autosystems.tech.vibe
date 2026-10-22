@@ -10,6 +10,7 @@
 .heroGrid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 70px; align-items: center; padding-block: 80px 68px; }
 .heroTitle { margin: 22px 0 27px; font-size: clamp(60px, 7vw, 104px); line-height: .94; font-weight: 500; letter-spacing: -.075em; }
 .heroTitle > span { display: block; color: var(--lime, #d2fa69); }
+:global(html[lang="zh-Hans"]) .heroTitle { line-height: 1.15; letter-spacing: -.045em; }
 .japaneseLead { font-size: clamp(23px, 2.3vw, 32px); line-height: 1.65; letter-spacing: -.04em; font-weight: 500; margin: 25px 0 20px; }
 .heroDescription { font-size: 13px; line-height: 2.1; color: #b0b4aa; max-width: 500px; margin: 20px 0 26px; }
 .heroBottom { border-top: 1px solid #373a34; padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 25px; font-size: 9px; letter-spacing: .1em; color: #b0b4aa; }
@@ -88,6 +89,7 @@
 .detailHero { padding: 32px 0 0; }
 .detailHeroGrid { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 72px; padding-block: 76px 64px; }
 .detailTitle { font-size: clamp(53px, 6.4vw, 96px); line-height: .98; letter-spacing: -.07em; font-weight: 400; max-width: 630px; margin: 27px 0; overflow-wrap: break-word; }
+:global(html[lang="zh-Hans"]) .detailTitle { line-height: 1.15; letter-spacing: -.04em; }
 .heroGrid > div, .detailHeroGrid > div { min-width: 0; }
 .detailTitle > span { color: var(--lime, #d2fa69); }
 .detailStatement { font-size: clamp(20px, 2.1vw, 29px); letter-spacing: -.04em; line-height: 1.6; white-space: pre-line; margin: 0; }
@@ -153,4 +155,5 @@
 }
 @media (max-width: 420px) { .featureGrid, .useCaseGrid { grid-template-columns: 1fr; }.featureCard { padding-bottom: 28px; }.featureCard h3 { margin-top: 18px; }.missionFoot { grid-template-columns: 1fr; }.heroTitle { font-size: 62px; }.inquiryArrow { width: 56px; height: 56px; }.inquiryLink > span:first-child { font-size: 35px; }.systemGraphic .graphicFlow { bottom: 36px; }.graphicBottom { font-size: 6px; } }
 @media (max-width: 360px) { .detailTitle { font-size: 47px; } }
+@media (max-width: 420px) { :global(html[lang="zh-Hans"]) .heroTitle { font-size: clamp(36px, 11.2vw, 48px); } }
 @media (prefers-reduced-motion: reduce) { .page *, .page *::before, .page *::after { transition: none !important; scroll-behavior: auto !important; } }

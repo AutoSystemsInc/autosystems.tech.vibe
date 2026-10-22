@@ -1,0 +1,47 @@
+   ▲ Next.js 15.2.6
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/24) ...
+   Generating static pages (6/24) 
+   Generating static pages (12/24) 
+   Generating static pages (18/24) 
+ ✓ Generating static pages (24/24)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      141 B         109 kB
+├ ○ /_not-found                            981 B         102 kB
+├ ○ /about                               3.75 kB         108 kB
+├ ○ /contact                               143 B         121 kB
+├ ○ /en                                    140 B         109 kB
+├ ○ /en/about                            3.75 kB         108 kB
+├ ○ /en/contact                            143 B         121 kB
+├ ○ /en/services                           143 B         114 kB
+├ ○ /en/services/iot                     3.77 kB         108 kB
+├ ○ /en/services/obd2                    3.77 kB         108 kB
+├ ○ /en/services/software                3.77 kB         108 kB
+├ ○ /services                              143 B         114 kB
+├ ○ /services/iot                        3.77 kB         108 kB
+├ ○ /services/obd2                       3.77 kB         108 kB
+├ ○ /services/software                   3.77 kB         108 kB
+├ ○ /zh                                    140 B         109 kB
+├ ○ /zh/about                            3.75 kB         108 kB
+├ ○ /zh/contact                            143 B         121 kB
+├ ○ /zh/services                           143 B         114 kB
+├ ○ /zh/services/iot                     3.77 kB         108 kB
+├ ○ /zh/services/obd2                    3.77 kB         108 kB
+└ ○ /zh/services/software                3.77 kB         108 kB
++ First Load JS shared by all             101 kB
+  ├ chunks/337-1f24517ae784c87c.js       45.5 kB
+  ├ chunks/4eea2e4e-91e8be0203bd2914.js  53.3 kB
+  └ other shared chunks (total)             2 kB
+
+
+○  (Static)  prerendered as static content
+

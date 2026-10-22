@@ -1,3 +1,5 @@
+import type { Locale } from "@/lib/i18n"
+
 export type ProprietaryService = {
   name: string
   url: string
@@ -53,3 +55,49 @@ export const proprietaryServices: ProprietaryService[] = [
     logoSrc: "/remote-obd2-logo.png",
   },
 ]
+
+const englishProprietaryServices: ProprietaryService[] = proprietaryServices.map((service, index) => ({
+  ...service,
+  ...[
+    {
+      name: "Business Management Cloud",
+      tagline: "Clear numbers. Informed business decisions.",
+      description: "Bring fragmented business management together. Everything in one view.",
+    },
+    {
+      name: "OpenMarket",
+      tagline: "Compare easily. Buy in one click. Get it delivered.",
+      description: "An AI agent finds products that fit your needs, purchases them, and has them delivered to you.",
+    },
+    {
+      name: "Remote OBD2 Tracker",
+      tagline: "Your vehicle’s pulse, connected to the cloud.",
+      description: "View detailed OBD2 data remotely. Support fleet management, driving safety, and maintenance decisions in real time.",
+    },
+  ][index],
+}))
+
+const chineseProprietaryServices: ProprietaryService[] = proprietaryServices.map((service, index) => ({
+  ...service,
+  ...[
+    {
+      name: "经营管理云平台",
+      tagline: "看清数据，做出经营决策。",
+      description: "将分散的经营管理整合起来，在一个界面掌握全局。",
+    },
+    {
+      name: "OpenMarket",
+      tagline: "轻松比较，一键购买，快速送达。",
+      description: "AI 智能体为您找到合适的商品，直接完成购买，并配送到您手中。",
+    },
+    {
+      name: "远程 OBD2 追踪器",
+      tagline: "将车辆的脉搏，连接至云端。",
+      description: "远程查看通过 OBD2 获取的详细数据，实时支持车队管理、行车安全和维护决策。",
+    },
+  ][index],
+}))
+
+export function getProprietaryServices(locale: Locale = "ja"): ProprietaryService[] {
+  return locale === "zh" ? chineseProprietaryServices : locale === "en" ? englishProprietaryServices : proprietaryServices
+}
